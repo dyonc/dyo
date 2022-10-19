@@ -137,7 +137,7 @@ function AddProjectModalHelper({
                 type="text"
                 required
                 className="border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500 block w-full rounded-md focus:outline-none sm:text-sm"
-                placeholder="Dub"
+                placeholder="Dyo"
                 value={name}
                 onChange={(e) => {
                   setData({ ...data, name: e.target.value });

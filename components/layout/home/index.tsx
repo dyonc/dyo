@@ -64,7 +64,7 @@ export default function HomeLayout({
       </div>
       {children}
       <div className="border-t border-gray-200 h-20 flex items-center justify-center space-x-12">
-        <a href="https://twitter.com/dubdotsh" target="_blank" rel="noreferrer">
+        <a href="https://twitter.com/DyonicLTD" target="_blank" rel="noreferrer">
           <span className="sr-only">Twitter</span>
           <Twitter className="w-6 h-6 text-gray-600" />
         </a>
@@ -82,7 +82,7 @@ export default function HomeLayout({
           </Link>
         )}
         <a
-          href="https://github.com/steven-tey/dub"
+          href="https://github.com/dyonc/dyo"
           target="_blank"
           rel="noreferrer"
         >

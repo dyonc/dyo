@@ -264,7 +264,7 @@ function AddEditLinkModal({
                   type="url"
                   required
                   className="border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500 block w-full rounded-md focus:outline-none sm:text-sm"
-                  placeholder="https://github.com/steven-tey/dub"
+                  placeholder="https://github.com/dyonc/dyo"
                   value={url}
                   onChange={(e) => {
                     setData({ ...data, url: e.target.value });
@@ -303,7 +303,7 @@ function AddEditLinkModal({
                   required
                   minRows={3}
                   className="border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500 pr-10 block w-full rounded-md focus:outline-none sm:text-sm"
-                  placeholder="Dub - an open-source link shortener SaaS with built-in analytics + free custom domains."
+                  placeholder="Dyo - an open-source link shortener SaaS with built-in analytics + free custom domains."
                   value={title}
                   onChange={(e) => {
                     setData({ ...data, title: e.target.value });
@@ -432,7 +432,7 @@ function AdvancedSettings({ data, setData, debouncedUrl }) {
                 id="description"
                 minRows={3}
                 className="border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500 pr-10 block w-full rounded-md focus:outline-none sm:text-sm"
-                placeholder="Dub is an open-source link shortener SaaS with built-in analytics + free custom domains."
+                placeholder="Dyo is an open-source link shortener SaaS with built-in analytics + free custom domains."
                 value={description}
                 onChange={(e) => {
                   setData({

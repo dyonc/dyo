@@ -5,7 +5,7 @@ const faviconFolder = "/static/favicons";
 export default function Meta() {
   return (
     <Head>
-      <title>Dub - Open-Source Bitly Alternative</title>
+      <title>Dyo - Open-Source URL Shortener</title>
       <meta
         name="description"
         content="An open-source link shortener SaaS with built-in analytics and free custom domains."
@@ -49,7 +49,7 @@ export default function Meta() {
       <meta name="twitter:creator" content="@steventey" />
       <meta
         name="twitter:title"
-        content="Dub - Open-Source Bitly Alternative"
+        content="Dyo - Open-Source URL Shortener"
       />
       <meta
         name="twitter:description"

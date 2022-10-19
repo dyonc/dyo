@@ -1,6 +1,6 @@
 <a href="https://dyo.at">
-  <img alt="Dub – an open-source link shortener SaaS with built-in analytics + free custom domains." src="/public/static/thumbnail.png">
-  <h1 align="center">Dub</h1>
+  <img alt="Dyo – an open-source link shortener SaaS with built-in analytics + free custom domains." src="/public/static/thumbnail.png">
+  <h1 align="center">Dyo</h1>
 </a>
 
 <p align="center">
@@ -18,19 +18,19 @@
 
 ## Introduction
 
-Dub is an open-source link shortener with built-in analytics + free custom domains. Built with [Vercel Edge Functions](http://vercel.com/edge) and [Upstash Redis](https://docs.upstash.com/redis).
+Dyo is an open-source link shortener with built-in analytics + free custom domains. Built with [Vercel Edge Functions](http://vercel.com/edge) and [Upstash Redis](https://docs.upstash.com/redis).
 
-Here are some of the features that Dub provides out-of-the-box:
+Here are some of the features that Dyo provides out-of-the-box:
 
 ### Built-in Analytics
 
-Dub provides a powerful analytics dashboard for your links, including geolocation, device, and browser information.
+Dyo provides a powerful analytics dashboard for your links, including geolocation, device, and browser information.
 
 ![Analytics Dashboard](/public/static/landing/analytics.png)
 
 ### Custom domains
 
-You can easily configure custom domains on Dub – just add an A/CNAME record to your DNS provider and you're good to go. This is built on the [Vercel Domains API](https://domains-api.vercel.app/).
+You can easily configure custom domains on Dyo – just add an A/CNAME record to your DNS provider and you're good to go. This is built on the [Vercel Domains API](https://domains-api.vercel.app/).
 
 ![Custom Domains](/public/static/landing/domains.png)
 
@@ -48,7 +48,7 @@ Add a custom OG image in front of your target URL. Bots like Twitter/Facebook wi
 
 ## Deploy Your Own
 
-You can deploy your own hosted version of Dub for greater privacy & control. Just click the link below to deploy a ready-to-go version of Dub to Vercel.
+You can deploy your own hosted version of Dyo for greater privacy & control. Just click the link below to deploy a ready-to-go version of Dyo to Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://dyo.at/deploy)
 
@@ -64,7 +64,7 @@ You can deploy your own hosted version of Dub for greater privacy & control. Jus
 
 ## Implementation
 
-Dub is built as a standard Next.js application with [Middleware](https://nextjs.org/docs/advanced-features/middleware) to handle multi-tenancy, inspired by [the Vercel Platforms Starter Kit](https://github.com/vercel/platforms).
+Dyo is built as a standard Next.js application with [Middleware](https://nextjs.org/docs/advanced-features/middleware) to handle multi-tenancy, inspired by [the Vercel Platforms Starter Kit](https://github.com/vercel/platforms).
 
 [Redis](https://redis.io/) is used as the database for storing links and analytics data, which works well for key-value data types. Redis also has the Sorted Set data type, which is perfect for storing & retrieving time-series analytics data. Here's the full schema:
 
@@ -77,10 +77,10 @@ Dub is built as a standard Next.js application with [Middleware](https://nextjs.
 
 We love our contributors! Here's how you can contribute:
 
-- [Open an issue](https://github.com/steven-tey/dub/issues) if you believe you've encountered a bug.
-- Make a [pull request](https://github.com/steven-tey/dub/pull) to add new features/make quality-of-life improvements/fix bugs.
+- [Open an issue](https://github.com/dyonc/dyo/issues) if you believe you've encountered a bug.
+- Make a [pull request](https://github.com/dyonc/dyo/pull) to add new features/make quality-of-life improvements/fix bugs.
 
-<a href="https://github.com/steven-tey/dub/graphs/contributors">
+<a href="https://github.com/dyonc/dyo/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=steven-tey/dub" />
 </a>
 
@@ -90,4 +90,4 @@ We love our contributors! Here's how you can contribute:
 
 ## License
 
-Inspired by [Plausible](https://plausible.io/), Dub is open-source under the GNU Affero General Public License Version 3 (AGPLv3) or any later version. You can [find it here](https://github.com/steven-tey/dub/blob/main/LICENSE.md).
+Inspired by [Plausible](https://plausible.io/), Dyo is open-source under the GNU Affero General Public License Version 3 (AGPLv3) or any later version. You can [find it here](https://github.com/dyonc/dyo/blob/main/LICENSE.md).

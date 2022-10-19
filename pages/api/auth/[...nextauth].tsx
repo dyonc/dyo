@@ -51,7 +51,7 @@ export const authOptions: NextAuthOptions = {
         const email = message.user.email;
         await Promise.all([
           sendMarketingMail({
-            subject: "✨ Welcome to Dub",
+            subject: "✨ Welcome to Dyo",
             to: email,
             bcc: process.env.TRUSTPILOT_BCC_EMAIL,
             component: <WelcomeEmail />,

@@ -103,7 +103,7 @@ const Demo = () => {
         <LinkCard
           key="github"
           _key="github"
-          url={"https://github.com/steven-tey/dub"}
+          url={"https://github.com/dyonc/dyo"}
         />
         {hashes.map(({ key, url }) => (
           <LinkCard
