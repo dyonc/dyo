@@ -11,10 +11,10 @@ export default async function handler(req: NextRequest) {
     if (!url) {
       return new Response(`Missing url or hostname`, { status: 400 });
     }
-    const { response, key } = await setRandomKey("dub.sh", url);
+    const { response, key } = await setRandomKey("dyo.at", url);
     if (response === 1) {
       // if key was successfully added
-      await redis.zadd(`dub.sh:links:timestamps:generic`, {
+      await redis.zadd(`dyo.at:links:timestamps:generic`, {
         score: Date.now(),
         member: key,
       });

@@ -10,7 +10,7 @@ export default async function handler(
   const { key: oldKey } = req.query as { key: string };
 
   const isOwner = await redis.zscore(
-    `dub.sh:links:timestamps:${session.user.id}`,
+    `dyo.at:links:timestamps:${session.user.id}`,
     oldKey,
   );
 
@@ -24,7 +24,7 @@ export default async function handler(
         .json({ error: "Missing key or url or title or timestamp" });
     }
     const response = await editLink(
-      "dub.sh",
+      "dyo.at",
       oldKey,
       {
         key,
@@ -39,7 +39,7 @@ export default async function handler(
     }
     return res.status(200).json(response);
   } else if (req.method === "DELETE") {
-    const response = await deleteLink("dub.sh", oldKey, session.user.id);
+    const response = await deleteLink("dyo.at", oldKey, session.user.id);
     return res.status(200).json(response);
   } else {
     res.setHeader("Allow", ["GET", "POST", "DELETE"]);

@@ -47,7 +47,7 @@ export default withProjectAuth(
           image,
         }),
         fetch(
-          `https://dub.sh/api/projects/${slug}/domains/${domain}/links/${oldKey}/revalidate?secret=${process.env.REVALIDATE_TOKEN}`,
+          `https://dyo.at/api/projects/${slug}/domains/${domain}/links/${oldKey}/revalidate?secret=${process.env.REVALIDATE_TOKEN}`,
         ),
       ]);
       if (response === null) {

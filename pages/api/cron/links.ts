@@ -4,7 +4,7 @@ import { log } from "@/lib/cron/utils";
 import { redis } from "@/lib/upstash";
 
 /**
- * Cron to delete generic links (links created on dub.sh) that are older than 30 days.
+ * Cron to delete generic links (links created on dyo.at) that are older than 30 days.
  * Runs once every day.
  **/
 
@@ -12,16 +12,16 @@ async function handler(_req: NextApiRequest, res: NextApiResponse) {
   try {
     const aWeekAgo = Date.now() - 1000 * 60 * 60 * 24 * 7;
     const links = await redis.zrange<string[]>(
-      "dub.sh:links:timestamps:generic",
+      "dyo.at:links:timestamps:generic",
       0,
       aWeekAgo,
       { byScore: true },
     );
     const pipeline = redis.pipeline();
     for (const link of links) {
-      pipeline.zrem("dub.sh:links:timestamps:generic", link);
-      pipeline.hdel("dub.sh:links", link);
-      pipeline.del(`dub.sh:clicks:${link}`);
+      pipeline.zrem("dyo.at:links:timestamps:generic", link);
+      pipeline.hdel("dyo.at:links", link);
+      pipeline.del(`dyo.at:clicks:${link}`);
     }
     const [results, _] = await Promise.all([
       pipeline.exec(),

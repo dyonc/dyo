@@ -11,7 +11,7 @@ export default withUserAuth(
         customer: user.stripeId,
         return_url: `${
           process.env.VERCEL === "1"
-            ? "https://app.dub.sh"
+            ? "https://app.dyo.at"
             : "http://app.localhost:3000"
         }/settings`,
       });

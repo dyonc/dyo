@@ -21,10 +21,10 @@ export default function HomeLayout({
           <div className="h-16 flex justify-between items-center">
             <div className="flex items-center">
               {domain ? (
-                <a href="https://dub.sh" target="_blank" rel="noreferrer">
+                <a href="https://dyo.at" target="_blank" rel="noreferrer">
                   <Image
                     src="/static/logotype.svg"
-                    alt="Dub.sh logo"
+                    alt="Dyo logo"
                     width={834}
                     height={236}
                     className="w-24"
@@ -35,7 +35,7 @@ export default function HomeLayout({
                   <a>
                     <Image
                       src="/static/logotype.svg"
-                      alt="Dub.sh logo"
+                      alt="Dyo logo"
                       width={834}
                       height={236}
                       className="w-24"
@@ -46,14 +46,14 @@ export default function HomeLayout({
             </div>
             {session ? (
               <a
-                href="https://app.dub.sh"
+                href="https://app.dyo.at"
                 className="py-1.5 px-5 bg-black hover:bg-white rounded-full border border-black text-sm text-white hover:text-black transition-all"
               >
                 Dashboard
               </a>
             ) : (
               <a
-                href="https://app.dub.sh/login"
+                href="https://app.dyo.at/login"
                 className="py-1.5 px-5 bg-black hover:bg-white rounded-full border border-black text-sm text-white hover:text-black transition-all"
               >
                 Sign in
@@ -69,14 +69,14 @@ export default function HomeLayout({
           <Twitter className="w-6 h-6 text-gray-600" />
         </a>
         {domain ? (
-          <a href="https://dub.sh" target="_blank" rel="noreferrer">
-            <span className="sr-only">Dub.sh Logo</span>
+          <a href="https://dyo.at" target="_blank" rel="noreferrer">
+            <span className="sr-only">Dyo Logo</span>
             <Logo className="w-7 h-7 text-gray-600" />
           </a>
         ) : (
           <Link href="/">
             <a>
-              <span className="sr-only">Dub.sh Logo</span>
+              <span className="sr-only">Dyo Logo</span>
               <Logo className="w-7 h-7 text-gray-600" />
             </a>
           </Link>

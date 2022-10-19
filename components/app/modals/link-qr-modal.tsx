@@ -129,7 +129,7 @@ function LinkQRModalHelper({
                     ...(showLogo && {
                       imageSettings: {
                         ...qrData.imageSettings,
-                        src: logo || "https://dub.sh/static/logo.svg",
+                        src: logo || "https://dyo.at/static/logo.svg",
                       },
                     }),
                   }),
@@ -222,7 +222,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                     setState={setShowLogo}
                     disabled={true}
                   />
-                  <p className="text-gray-600 text-sm">Show Dub.sh Logo</p>
+                  <p className="text-gray-600 text-sm">Show Dyo Logo</p>
                 </div>
               </Tooltip>
             ) : (
@@ -233,7 +233,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                   thumbTranslate="translate-x-6"
                   setState={setShowLogo}
                 />
-                <p className="text-gray-600 text-sm">Show Dub.sh Logo</p>
+                <p className="text-gray-600 text-sm">Show Dyo Logo</p>
               </div>
             )}
           </div>

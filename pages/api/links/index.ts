@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "@/lib/auth";
 import { addLink, getLinksForProject } from "@/lib/upstash";
 
-// This is a special route for creating custom dub.sh links.
+// This is a special route for creating custom dyo.at links.
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,9 +11,9 @@ export default async function handler(
   const session = await getSession(req, res);
   if (!session?.user.id) return res.status(401).end("Unauthorized");
 
-  // GET /api/links – get all dub.sh links created by the user
+  // GET /api/links – get all dyo.at links created by the user
   if (req.method === "GET") {
-    const response = await getLinksForProject("dub.sh", session.user.id);
+    const response = await getLinksForProject("dyo.at", session.user.id);
     return res.status(200).json(response);
 
     // POST /api/links – create a new link
@@ -23,7 +23,7 @@ export default async function handler(
       return res.status(400).json({ error: "Missing url" });
     }
     const response = await addLink(
-      "dub.sh",
+      "dyo.at",
       { url, key, title },
       session.user.id,
     );

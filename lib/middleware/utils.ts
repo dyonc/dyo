@@ -3,7 +3,7 @@ import { HOME_HOSTNAMES } from "@/lib/constants";
 
 export const parse = (req: NextRequest) => {
   let hostname = req.headers.get("host");
-  if (HOME_HOSTNAMES.has(hostname)) hostname = "dub.sh";
+  if (HOME_HOSTNAMES.has(hostname)) hostname = "dyo.at";
   const path = req.nextUrl.pathname;
   const key = decodeURIComponent(path.split("/")[1]); // to handle foreign languages like Hebrew
   return { hostname, path, key };

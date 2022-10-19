@@ -161,12 +161,12 @@ const GlobeAnimation = ({
               <a
                 className="text-blue-800 font-semibold"
                 href={
-                  hostname ? `https://${hostname}` : "https://dub.sh/github"
+                  hostname ? `https://${hostname}` : "https://dyo.at/github"
                 }
                 target="_blank"
                 rel="noreferrer"
               >
-                {hostname || "dub.sh/github"}
+                {hostname || "dyo.at/github"}
               </a>{" "}
               in real time.
             </p>

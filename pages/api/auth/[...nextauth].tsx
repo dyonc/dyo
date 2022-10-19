@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
     EmailProvider({
       sendVerificationRequest({ identifier, url }) {
         sendMail({
-          subject: "Your Dub.sh Login Link",
+          subject: "Your Dyo Login Link",
           to: identifier,
           component: <LoginLink url={url} />,
         });
@@ -30,7 +30,7 @@ export const authOptions: NextAuthOptions = {
         sameSite: "lax",
         path: "/",
         // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
-        domain: VERCEL_DEPLOYMENT ? ".dub.sh" : undefined,
+        domain: VERCEL_DEPLOYMENT ? ".dyo.at" : undefined,
         secure: VERCEL_DEPLOYMENT,
       },
     },

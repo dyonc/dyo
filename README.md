@@ -1,4 +1,4 @@
-<a href="https://dub.sh">
+<a href="https://dyo.at">
   <img alt="Dub – an open-source link shortener SaaS with built-in analytics + free custom domains." src="/public/static/thumbnail.png">
   <h1 align="center">Dub</h1>
 </a>
@@ -50,7 +50,7 @@ Add a custom OG image in front of your target URL. Bots like Twitter/Facebook wi
 
 You can deploy your own hosted version of Dub for greater privacy & control. Just click the link below to deploy a ready-to-go version of Dub to Vercel.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://dub.sh/deploy)
+[![Deploy with Vercel](https://vercel.com/button)](https://dyo.at/deploy)
 
 ## Tech Stack
 
@@ -68,10 +68,10 @@ Dub is built as a standard Next.js application with [Middleware](https://nextjs.
 
 [Redis](https://redis.io/) is used as the database for storing links and analytics data, which works well for key-value data types. Redis also has the Sorted Set data type, which is perfect for storing & retrieving time-series analytics data. Here's the full schema:
 
-- `{hostname}:links` – hashmap of all links for a given hostname (e.g. `dub.sh:links`)
-- `{hostname}:links:timestamps` – sorted set of all link timestamps for a given hostname (e.g. `dub.sh:links:timestamps`)
-- `{hostname}:clicks:{linkId}` – sorted set of all clicks for a given link (e.g. `dub.sh:clicks:github`)
-- `{hostname}:root:clicks` – sorted set of all root link clicks for a given hostname (e.g. `dub.sh:root:clicks`)
+- `{hostname}:links` – hashmap of all links for a given hostname (e.g. `dyo.at:links`)
+- `{hostname}:links:timestamps` – sorted set of all link timestamps for a given hostname (e.g. `dyo.at:links:timestamps`)
+- `{hostname}:clicks:{linkId}` – sorted set of all clicks for a given link (e.g. `dyo.at:clicks:github`)
+- `{hostname}:root:clicks` – sorted set of all root link clicks for a given hostname (e.g. `dyo.at:root:clicks`)
 
 ## Contributing
 

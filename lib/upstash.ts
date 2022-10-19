@@ -82,8 +82,8 @@ export async function getRandomKey(hostname: string): Promise<string> {
 }
 
 export async function checkIfKeyExists(hostname: string, key: string) {
-  if (hostname === "dub.sh" && RESERVED_KEYS.has(key)) {
-    return 1; // reserved keys for dub.sh
+  if (hostname === "dyo.at" && RESERVED_KEYS.has(key)) {
+    return 1; // reserved keys for dyo.at
   }
   return await redis.hexists(`${hostname}:links`, key);
 }
@@ -121,7 +121,7 @@ export async function getLinksForProject(
   /*
     This function is used to get all links for a project.
 
-    Only applicable for dub.sh:
+    Only applicable for dyo.at:
       - If a username is provided, it will only return links for that user.
         Otherwise, it will return all links for the project.
   */
@@ -161,7 +161,7 @@ export async function getLinkClicksCount(hostname: string, key: string) {
 export async function addLink(
   hostname: string,
   link: LinkProps,
-  userId?: string, // only applicable for dub.sh links
+  userId?: string, // only applicable for dyo.at links
 ) {
   const {
     key, // if key is provided, it will be used
@@ -171,12 +171,12 @@ export async function addLink(
     image, // only for Pro users: customize OG image
   } = link;
 
-  if (hostname === "dub.sh" && key && RESERVED_KEYS.has(key)) {
-    return null; // reserved keys for dub.sh
+  if (hostname === "dyo.at" && key && RESERVED_KEYS.has(key)) {
+    return null; // reserved keys for dyo.at
   }
   const response = key
     ? await setKey(hostname, key, url, title, description, image)
-    : await setRandomKey(hostname, url, title); // not possible to add description and image for random keys (only for dub.sh landing page input)
+    : await setRandomKey(hostname, url, title); // not possible to add description and image for random keys (only for dyo.at landing page input)
 
   if (response === 1) {
     return await redis.zadd(
@@ -213,8 +213,8 @@ export async function editLink(
     });
   } else {
     // if key is different
-    if (domain === "dub.sh" && RESERVED_KEYS.has(key)) {
-      return null; // reserved keys for dub.sh
+    if (domain === "dyo.at" && RESERVED_KEYS.has(key)) {
+      return null; // reserved keys for dyo.at
     }
     const keyExists = await checkIfKeyExists(domain, key);
     if (keyExists === 1) {

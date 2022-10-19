@@ -28,8 +28,8 @@ export default async function LinkMiddleware(
     if (!noTrack) ev.waitUntil(recordClick(hostname, req, key)); // track the click only if there is no `dub-no-track` header
 
     if (image && description && isBot) {
-      // rewrite to proxy page (dub.sh/proxy/[domain]/[key])
-      return NextResponse.rewrite(`https://dub.sh/proxy/${hostname}/${key}`);
+      // rewrite to proxy page (dyo.at/proxy/[domain]/[key])
+      return NextResponse.rewrite(`https://dyo.at/proxy/${hostname}/${key}`);
     } else {
       return NextResponse.redirect(target);
     }

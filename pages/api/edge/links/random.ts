@@ -7,7 +7,7 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   if (req.method === "GET") {
-    const key = await getRandomKey("dub.sh");
+    const key = await getRandomKey("dyo.at");
     return new Response(JSON.stringify(key), { status: 200 });
   } else {
     return new Response(`Method ${req.method} Not Allowed`, { status: 405 });

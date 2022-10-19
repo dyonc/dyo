@@ -26,7 +26,7 @@ export default function ListBox() {
       projects?.find((project) => project.slug === slug) || {
         name: session?.user?.name || session?.user?.email || "User",
         slug: "/",
-        domain: "dub.sh",
+        domain: "dyo.at",
       }
     );
   }, [router, projects, session]);

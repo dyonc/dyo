@@ -68,7 +68,7 @@ function AddEditLinkModal({
     } else {
       return {
         avatar: "/static/logo.png",
-        alt: "Dub.sh",
+        alt: "Dyo",
         copy: "Add a new link",
       };
     }
@@ -211,7 +211,7 @@ function AddEditLinkModal({
               </div>
               <div className="relative flex mt-1 rounded-md shadow-sm">
                 <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-5 text-gray-500 sm:text-sm whitespace-nowrap">
-                  {domain || "dub.sh"}
+                  {domain || "dyo.at"}
                 </span>
                 <input
                   type="text"

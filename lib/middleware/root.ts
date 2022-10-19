@@ -13,18 +13,18 @@ export default async function RootMiddleware(
   }
 
   if (
-    hostname === "dub.sh" ||
-    hostname === "preview.dub.sh" ||
+    hostname === "dyo.at" ||
+    hostname === "preview.dyo.at" ||
     hostname.endsWith(".vercel.app")
   ) {
-    ev.waitUntil(redis.incr("dub.sh:root:clicks")); // increment root clicks (only for dub.sh)
+    ev.waitUntil(redis.incr("dyo.at:root:clicks")); // increment root clicks (only for dyo.at)
   } else {
-    ev.waitUntil(recordClick(hostname, req)); // record clicks on root page (if hostname is not dub.sh)
+    ev.waitUntil(recordClick(hostname, req)); // record clicks on root page (if hostname is not dyo.at)
   }
 
   if (
-    hostname === "dub.sh" ||
-    hostname === "preview.dub.sh" ||
+    hostname === "dyo.at" ||
+    hostname === "preview.dyo.at" ||
     hostname.endsWith(".vercel.app")
   ) {
     return NextResponse.next();
