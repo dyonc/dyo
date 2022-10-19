@@ -84,10 +84,6 @@ We love our contributors! Here's how you can contribute:
   <img src="https://contrib.rocks/image?repo=steven-tey/dub" />
 </a>
 
-## Author
-
-- Steven Tey ([@steventey](https://twitter.com/steventey))
-
 ## License
 
 Inspired by [Plausible](https://plausible.io/), Dyo is open-source under the GNU Affero General Public License Version 3 (AGPLv3) or any later version. You can [find it here](https://github.com/dyonc/dyo/blob/main/LICENSE.md).
