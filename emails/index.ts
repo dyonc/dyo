@@ -3,14 +3,14 @@ import nodemailer from "nodemailer";
 
 const sendMail = buildSendMail({
   transport: nodemailer.createTransport({
-    host: "smtp.postmarkapp.com",
-    port: 587,
+    host: "email-smtp.eu-central-1.amazonaws.com",
+    port: 2587,
     auth: {
-      user: process.env.POSTMARK_API_KEY,
-      pass: process.env.POSTMARK_API_KEY,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
     },
   }),
-  defaultFrom: "Steven from Dyo <steven@dyo.at>",
+  defaultFrom: "Dyo <no-reply@dyo.at>",
   configPath: "./mailing.config.json",
 });
 
@@ -19,12 +19,12 @@ export default sendMail;
 export const sendMarketingMail = buildSendMail({
   transport: nodemailer.createTransport({
     host: "smtp-broadcasts.postmarkapp.com",
-    port: 587,
+    port: 2587,
     auth: {
       user: process.env.POSTMARK_MARKETING_API_KEY,
       pass: process.env.POSTMARK_MARKETING_API_SECRET,
     },
   }),
-  defaultFrom: "Steven from Dyo <steven@ship.dyo.at>",
+  defaultFrom: "Dyo <no-reply@dyo.at>",
   configPath: "./mailing.config.json",
 });
