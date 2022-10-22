@@ -24,8 +24,8 @@ export default async function LinkMiddleware(
     const isBot = detectBot(req);
 
     // special case for link health monitoring with planetfall.io :)
-    const noTrack = req.headers.get("dub-no-track");
-    if (!noTrack) ev.waitUntil(recordClick(hostname, req, key)); // track the click only if there is no `dub-no-track` header
+    const noTrack = req.headers.get("dyo-no-track");
+    if (!noTrack) ev.waitUntil(recordClick(hostname, req, key)); // track the click only if there is no `dyo-no-track` header
 
     if (image && description && isBot) {
       // rewrite to proxy page (dyo.at/proxy/[domain]/[key])
