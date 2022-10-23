@@ -10,9 +10,8 @@ const Hero = () => {
         rel="noreferrer"
         className="bg-blue-100 hover:bg-blue-200 flex justify-center items-center space-x-2 max-w-fit px-7 py-2 mx-auto rounded-full overflow-hidden transition-all"
       >
-        <Twitter className="w-5 h-5 text-[#1d9bf0]" />
         <p className="text-[#1d9bf0] font-semibold text-sm">
-          Introducing dyo.at
+          Introducing Dyo
         </p>
       </a>
 
@@ -24,7 +23,7 @@ const Hero = () => {
         </span>
       </h1>
       <p className="text-gray-600 text-xl sm:text-2xl mt-5">
-        Dub is an open-source link shortener with built-in analytics and free
+        Dyo is an open-source link shortener with built-in analytics and free
         custom domains.
       </p>
 
@@ -36,7 +35,7 @@ const Hero = () => {
         </Link>
         <a
           className="flex justify-center items-center space-x-2 py-2 px-5 bg-white rounded-full border border-gray-300 hover:border-gray-800 transition-all"
-          href="https://github.com/steven-tey/dub"
+          href="https://github.com/dyonc/dyo"
           target="_blank"
           rel="noreferrer"
         >

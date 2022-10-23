@@ -42,7 +42,7 @@ export async function setRandomKey(
       score: Date.now(),
       member: {
         geo: LOCALHOST_GEO_DATA,
-        ua: "Dub-Bot",
+        ua: "Dyo-Bot",
         referer: "https://dyo.at",
         timestamp: Date.now(),
       },

@@ -137,7 +137,7 @@ function AddProjectModalHelper({
                 type="text"
                 required
                 className="border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500 block w-full rounded-md focus:outline-none sm:text-sm"
-                placeholder="Dub"
+                placeholder="Dyo"
                 value={name}
                 onChange={(e) => {
                   setData({ ...data, name: e.target.value });
@@ -169,7 +169,7 @@ function AddProjectModalHelper({
                     ? "border-red-300 text-red-900 placeholder-red-300 focus:border-red-500 focus:ring-red-500"
                     : "border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500"
                 } pr-10 block w-full rounded-r-md focus:outline-none sm:text-sm`}
-                placeholder="dub"
+                placeholder="dyo"
                 value={slug}
                 onChange={(e) => {
                   setSlugError(null);

@@ -1,8 +1,8 @@
 export const log = async (message: string) => {
   /* Log a message to the console */
-  if (!process.env.DUB_SLACK_HOOK) return;
+  if (!process.env.DYO_SLACK_HOOK) return;
   try {
-    return await fetch(process.env.DUB_SLACK_HOOK, {
+    return await fetch(process.env.DYO_SLACK_HOOK, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

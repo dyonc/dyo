@@ -4,7 +4,7 @@ import { FAVICON_FOLDER } from "@/lib/constants";
 export default function Meta() {
   return (
     <Head>
-      <title>Dub - Open-Source Bitly Alternative</title>
+      <title>Dyo - Open-Source Bitly Alternative</title>
       <meta
         name="description"
         content="An open-source link shortener SaaS with built-in analytics and free custom domains."
@@ -48,7 +48,7 @@ export default function Meta() {
       <meta name="twitter:creator" content="@steventey" />
       <meta
         name="twitter:title"
-        content="Dub - Open-Source Bitly Alternative"
+        content="Dyo - Open-Source Bitly Alternative"
       />
       <meta
         name="twitter:description"

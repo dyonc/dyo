@@ -160,7 +160,7 @@ const getUsage = async (
       domain,
       // only for dyo.at, pull data for owner's usage only
       ...(domain === "dyo.at" && {
-        userId: process.env.DUB_OWNER_ID,
+        userId: process.env.DYO_OWNER_ID,
       }),
     },
     select: {
@@ -212,7 +212,7 @@ const sendUsageLimitEmail = async (
 ) => {
   return await Promise.all([
     sendMail({
-      subject: `You have exceeded your Dub usage limit`,
+      subject: `You have exceeded your Dyo usage limit`,
       to: email,
       component: (
         <UsageExceeded usage={usage} usageLimit={usageLimit} type={type} />

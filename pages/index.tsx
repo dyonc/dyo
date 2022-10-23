@@ -46,7 +46,7 @@ export default function Home({ stars }: { stars: number }) {
 
 export async function getStaticProps() {
   const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/steven-tey/dub",
+    "https://api.github.com/repos/steven-tey/dyo",
     {
       // optional – feel free to remove if you don't want to display star count
       ...(process.env.GITHUB_OAUTH_TOKEN && {

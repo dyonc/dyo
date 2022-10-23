@@ -22,11 +22,11 @@ export default async function LinkMiddleware(
 
   if (target) {
     // special case for link health monitoring with planetfall.io :)
-    if (!req.headers.get("dub-no-track")) {
-      ev.waitUntil(recordClick(domain, req, key)); // track the click only if there is no `dub-no-track` header
+    if (!req.headers.get("dyo-no-track")) {
+      ev.waitUntil(recordClick(domain, req, key)); // track the click only if there is no `dyo-no-track` header
     }
 
-    if (password && !req.cookies.get("dub_authenticated")) {
+    if (password && !req.cookies.get("dyo_authenticated")) {
       // rewrite to auth page (/_auth/[domain]/[key]) if the link is password protected and the user has not authenticated before
       return NextResponse.rewrite(new URL(`/_auth/${domain}/${key}`, req.url));
     }

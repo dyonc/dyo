@@ -17,7 +17,7 @@ export default async function handler(
       // Set cookie to authenticate user for 1 week
       res.setHeader(
         "Set-Cookie",
-        serialize("dub_authenticated", "1", {
+        serialize("dyo_authenticated", "1", {
           path: `/${key}`,
           maxAge: 60 * 60 * 24 * 7, // 1 week
           httpOnly: true,

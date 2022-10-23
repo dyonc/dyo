@@ -61,7 +61,7 @@ export default function Globe({ domain }: { domain?: string }) {
         <div className="w-full h-full flex items-center justify-center">
           <video
             autoPlay
-            src="https://res.cloudinary.com/dubdotsh/video/upload/v1664203052/globe-animation-fallback.mp4"
+            src="https://res.cloudinary.com/dyodotsh/video/upload/v1664203052/globe-animation-fallback.mp4"
             loop
             muted
             playsInline

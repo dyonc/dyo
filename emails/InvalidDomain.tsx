@@ -44,7 +44,7 @@ export default function InvalidDomain({
                     {domain}
                   </a>
                 </code>{" "}
-                for your Dub project{" "}
+                for your Dyo project{" "}
                 <a href={`https://app.dyo.at/${projectSlug}`} target="_blank">
                   {projectSlug}↗
                 </a>{" "}
@@ -60,7 +60,7 @@ export default function InvalidDomain({
                 uiText="Configure my domain"
               />
               <MjmlText cssClass="paragraph">
-                If you do not want to keep this project on Dub, you can{" "}
+                If you do not want to keep this project on Dyo, you can{" "}
                 <a
                   href={`https://app.dyo.at/${projectSlug}/settings`}
                   target="_blank"
@@ -75,7 +75,7 @@ export default function InvalidDomain({
                   : "this will be the last time I'll email you about this."}
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dub
+                Steven from Dyo
               </MjmlText>
               <Divider />
             </MjmlColumn>
