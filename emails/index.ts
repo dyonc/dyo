@@ -10,7 +10,7 @@ const sendMail = buildSendMail({
       pass: process.env.POSTMARK_API_KEY,
     },
   }),
-  defaultFrom: "Dyo <no-reply@resumy.org>",
+  defaultFrom: "Dyo <no-reply@dyo.at>",
   configPath: "./mailing.config.json",
 });
 
