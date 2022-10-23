@@ -11,7 +11,7 @@ export default async function handler(
 
   const { domain } = req.query as { domain: string };
 
-  // GET /api/projects/dyo/domains/[domain]/exists – check if a domain exists (using `dyo` as the default project slug)
+  // GET /api/projects/dub/domains/[domain]/exists – check if a domain exists (using `dub` as the default project slug)
   if (req.method === "GET") {
     const project = await prisma.project.findUnique({
       where: {

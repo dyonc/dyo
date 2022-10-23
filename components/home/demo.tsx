@@ -21,15 +21,12 @@ const Demo = () => {
         onSubmit={async (e) => {
           e.preventDefault();
           setSaving(true);
-          fetch(
-            `/api/edge/links?url=${encodeURIComponent(url)}&hostname=dyo.at`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
+          fetch(`/api/edge/links?url=${encodeURIComponent(url)}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-          ).then(async (response) => {
+          }).then(async (response) => {
             setSaving(false);
             if (response.ok) {
               const json = await response.json();
@@ -46,7 +43,7 @@ const Demo = () => {
                 title="Maximum number of links reached. Swipe to delete existing links or
               create a free account."
                 cta="Start For Free"
-                ctaLink="https://app.dyo.at/register"
+                ctaLink="https://app./register"
               />
             }
           >
@@ -103,7 +100,7 @@ const Demo = () => {
         <LinkCard
           key="github"
           _key="github"
-          url={"https://github.com/dyonc/dyo"}
+          url={"https://github.com/steven-tey/dub"}
         />
         {hashes.map(({ key, url }) => (
           <LinkCard
@@ -121,9 +118,9 @@ const Demo = () => {
           variants={FRAMER_MOTION_LIST_ITEM_VARIANTS}
           className="border border-gray-200 bg-white p-3 rounded-md text-gray-500 text-sm"
         >
-          Note: Public links will be automatically-deleted after 7 days.{" "}
+          Note: Public links will be automatically-deleted after 30 minutes.{" "}
           <a
-            href="https://app.dyo.at/register"
+            href="https://app./register"
             target="_blank"
             rel="noreferrer"
             className="text-gray-700 hover:text-black font-medium underline transition-all"

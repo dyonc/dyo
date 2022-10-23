@@ -17,14 +17,14 @@ export default function HomeLayout({
     <div className="min-h-screen flex flex-col justify-between">
       <Meta />
       <div className="bg-white z-20">
-        <div className="max-w-screen-xl mx-auto px-5 sm:px-20">
+        <div className="max-w-screen-xl mx-auto px-5 md:px-20">
           <div className="h-16 flex justify-between items-center">
             <div className="flex items-center">
               {domain ? (
-                <a href="https://dyo.at" target="_blank" rel="noreferrer">
+                <a href="https://" target="_blank" rel="noreferrer">
                   <Image
                     src="/static/logotype.svg"
-                    alt="Dyo logo"
+                    alt=" logo"
                     width={834}
                     height={236}
                     className="w-24"
@@ -35,7 +35,7 @@ export default function HomeLayout({
                   <a>
                     <Image
                       src="/static/logotype.svg"
-                      alt="Dyo logo"
+                      alt=" logo"
                       width={834}
                       height={236}
                       className="w-24"
@@ -46,14 +46,14 @@ export default function HomeLayout({
             </div>
             {session ? (
               <a
-                href="https://app.dyo.at"
+                href="https://app."
                 className="py-1.5 px-5 bg-black hover:bg-white rounded-full border border-black text-sm text-white hover:text-black transition-all"
               >
                 Dashboard
               </a>
             ) : (
               <a
-                href="https://app.dyo.at/login"
+                href="https://app./login"
                 className="py-1.5 px-5 bg-black hover:bg-white rounded-full border border-black text-sm text-white hover:text-black transition-all"
               >
                 Sign in
@@ -64,25 +64,25 @@ export default function HomeLayout({
       </div>
       {children}
       <div className="border-t border-gray-200 h-20 flex items-center justify-center space-x-12">
-        <a href="https://twitter.com/DyonicLTD" target="_blank" rel="noreferrer">
+        <a href="https://twitter.com/dubdotsh" target="_blank" rel="noreferrer">
           <span className="sr-only">Twitter</span>
           <Twitter className="w-6 h-6 text-gray-600" />
         </a>
         {domain ? (
-          <a href="https://dyo.at" target="_blank" rel="noreferrer">
-            <span className="sr-only">Dyo Logo</span>
+          <a href="https://" target="_blank" rel="noreferrer">
+            <span className="sr-only"> Logo</span>
             <Logo className="w-7 h-7 text-gray-600" />
           </a>
         ) : (
           <Link href="/">
             <a>
-              <span className="sr-only">Dyo Logo</span>
+              <span className="sr-only"> Logo</span>
               <Logo className="w-7 h-7 text-gray-600" />
             </a>
           </Link>
         )}
         <a
-          href="https://github.com/dyonc/dyo"
+          href="https://github.com/steven-tey/dub"
           target="_blank"
           rel="noreferrer"
         >

@@ -7,7 +7,7 @@ import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 export default function Placeholder({ domain }: { domain: string }) {
   return (
     <HomeLayout domain={domain}>
-      <Globe hostname={domain} />
+      <Globe domain={domain} />
     </HomeLayout>
   );
 }
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { domain } = context.params as Params;
   return {
     props: {
-      domain: domain ? domain[0] : "dyo.at",
+      domain: domain ? domain[0] : "",
     },
   };
 };

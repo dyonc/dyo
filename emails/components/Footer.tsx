@@ -11,7 +11,7 @@ export default function Footer({
     <MjmlSection cssClass="smooth">
       <MjmlColumn>
         <MjmlText cssClass="footer">
-          © {new Date().getFullYear()} Dyo
+          © {new Date().getFullYear()} 
           {unsubscribe && (
             <>
               &nbsp;&nbsp;·&nbsp;&nbsp;

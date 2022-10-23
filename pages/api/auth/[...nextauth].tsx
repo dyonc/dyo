@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
     EmailProvider({
       sendVerificationRequest({ identifier, url }) {
         sendMail({
-          subject: "Your Dyo Login Link",
+          subject: "Your  Login Link",
           to: identifier,
           component: <LoginLink url={url} />,
         });
@@ -30,7 +30,7 @@ export const authOptions: NextAuthOptions = {
         sameSite: "lax",
         path: "/",
         // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
-        domain: VERCEL_DEPLOYMENT ? ".dyo.at" : undefined,
+        domain: VERCEL_DEPLOYMENT ? "." : undefined,
         secure: VERCEL_DEPLOYMENT,
       },
     },
@@ -51,7 +51,7 @@ export const authOptions: NextAuthOptions = {
         const email = message.user.email;
         await Promise.all([
           sendMarketingMail({
-            subject: "✨ Welcome to Dyo",
+            subject: "✨ Welcome to Dub",
             to: email,
             component: <WelcomeEmail />,
           }),

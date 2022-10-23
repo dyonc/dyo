@@ -42,27 +42,27 @@ export default function ProjectDeleted({
                     {domain}
                   </a>
                 </code>{" "}
-                for your Dyo project{" "}
-                <a href={`https://app.dyo.at/${projectSlug}`} target="_blank">
+                for your Dub project{" "}
+                <a href={`https://app./${projectSlug}`} target="_blank">
                   {projectSlug}↗
                 </a>{" "}
                 has been invalid for 30 days. As a result, your project has been
-                deleted from Dyo.
+                deleted from Dub.
               </MjmlText>
               <MjmlText cssClass="paragraph">
                 If you would like to restore the project, you can easily create
-                it again on Dyo with the link below.
+                it again on Dub with the link below.
               </MjmlText>
               <ButtonPrimary
-                link={`https://app.dyo.at/`}
+                link={`https://app./`}
                 uiText="Create a new project"
               />
               <MjmlText cssClass="paragraph">
-                If you did not want to keep this project on Dyo anyway, you can
+                If you did not want to keep this project on Dub anyway, you can
                 simply ignore this email.
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dyo
+                Steven from Dub
               </MjmlText>
               <Divider />
             </MjmlColumn>

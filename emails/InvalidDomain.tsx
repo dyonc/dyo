@@ -44,8 +44,8 @@ export default function InvalidDomain({
                     {domain}
                   </a>
                 </code>{" "}
-                for your Dyo project{" "}
-                <a href={`https://app.dyo.at/${projectSlug}`} target="_blank">
+                for your Dub project{" "}
+                <a href={`https://app./${projectSlug}`} target="_blank">
                   {projectSlug}↗
                 </a>{" "}
                 has been invalid for {invalidDays} days.
@@ -56,13 +56,13 @@ export default function InvalidDomain({
                 configure your domain.
               </MjmlText>
               <ButtonPrimary
-                link={`https://app.dyo.at/${projectSlug}/settings`}
+                link={`https://app./${projectSlug}/settings`}
                 uiText="Configure my domain"
               />
               <MjmlText cssClass="paragraph">
-                If you do not want to keep this project on Dyo, you can{" "}
+                If you do not want to keep this project on Dub, you can{" "}
                 <a
-                  href={`https://app.dyo.at/${projectSlug}/settings`}
+                  href={`https://app./${projectSlug}/settings`}
                   target="_blank"
                 >
                   delete it
@@ -75,7 +75,7 @@ export default function InvalidDomain({
                   : "this will be the last time I'll email you about this."}
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dyo
+                Steven from Dub
               </MjmlText>
               <Divider />
             </MjmlColumn>

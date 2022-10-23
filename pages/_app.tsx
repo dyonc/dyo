@@ -9,7 +9,7 @@ function MyApp({
   pageProps: { session, ...pageProps },
 }: AppProps<{ session: Session }>) {
   return (
-    <PlausibleProvider domain="dyo.at">
+    <PlausibleProvider domain="">
       <SessionProvider session={session}>
         <Component {...pageProps} />
       </SessionProvider>

@@ -129,7 +129,7 @@ function LinkQRModalHelper({
                     ...(showLogo && {
                       imageSettings: {
                         ...qrData.imageSettings,
-                        src: logo || "https://dyo.at/static/logo.svg",
+                        src: logo || "https:///static/logo.svg",
                       },
                     }),
                   }),
@@ -208,7 +208,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
               <Tooltip
                 content={
                   <TooltipContent
-                    title="As a freemium product, we rely on word of mouth to spread the word about Dyo. If you'd like to remove the Dyo logo/upload your own, please consider upgrading to a Pro plan."
+                    title="As a freemium product, we rely on word of mouth to spread the word about Dub. If you'd like to remove the Dub logo/upload your own, please consider upgrading to a Pro plan."
                     cta="Upgrade to Pro"
                     ctaLink={isApp ? "/settings" : "/#pricing"}
                   />
@@ -216,24 +216,24 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
               >
                 <div className="flex mt-1 space-x-2 items-center cursor-not-allowed pointer-events-none sm:pointer-events-auto">
                   <Switch
+                    fn={setShowLogo}
                     trackDimensions="h-6 w-12"
                     thumbDimensions="w-5 h-5"
                     thumbTranslate="translate-x-6"
-                    setState={setShowLogo}
                     disabled={true}
                   />
-                  <p className="text-gray-600 text-sm">Show Dyo Logo</p>
+                  <p className="text-gray-600 text-sm">Show  Logo</p>
                 </div>
               </Tooltip>
             ) : (
               <div className="flex mt-1 space-x-2 items-center">
                 <Switch
+                  fn={setShowLogo}
                   trackDimensions="h-6 w-12"
                   thumbDimensions="w-5 h-5"
                   thumbTranslate="translate-x-6"
-                  setState={setShowLogo}
                 />
-                <p className="text-gray-600 text-sm">Show Dyo Logo</p>
+                <p className="text-gray-600 text-sm">Show  Logo</p>
               </div>
             )}
           </div>

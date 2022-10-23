@@ -22,7 +22,7 @@ export default function LoginLink({ url }: { url: string }): JSX.Element {
           <Header title="Your Login Link" />
           <MjmlSection cssClass="smooth">
             <MjmlColumn>
-              <MjmlText cssClass="paragraph">Welcome to Dyo!</MjmlText>
+              <MjmlText cssClass="paragraph">Welcome to Dub!</MjmlText>
               <MjmlText cssClass="paragraph">
                 Please click the magic link below to sign in to your account.
               </MjmlText>

@@ -59,7 +59,7 @@ function EditDomainModal({
             height={20}
           />
           <h3 className="font-medium text-lg">Change Domain</h3>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 text-center">
             Warning: Changing your project's domain will break all existing
             short links.
           </p>
@@ -156,7 +156,7 @@ function EditDomainModal({
                   Domain is already in use.{" "}
                   <a
                     className="underline"
-                    href="mailto:steven@dyo.at?subject=My Domain Is Already In Use"
+                    href="mailto:steven@?subject=My Domain Is Already In Use"
                   >
                     Contact us
                   </a>{" "}

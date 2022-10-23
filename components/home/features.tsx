@@ -24,7 +24,7 @@ const Features = ({ stars }: { stars: number }) => {
             Open source.
           </h2>
           <p className="text-gray-600 sm:text-lg mt-5">
-            With Dyo, you get the best of both worlds: a powerful link shortener
+            With Dub, you get the best of both worlds: a powerful link shortener
             with built-in analytics, and the freedom to host it yourself.
           </p>
         </div>
@@ -40,7 +40,7 @@ const Features = ({ stars }: { stars: number }) => {
             </h3>
 
             <p className="text-gray-500 mt-3">
-              Dyo provides powerful analytics for your links, including
+              Dub provides powerful analytics for your links, including
               geolocation, device, and browser information.
             </p>
             <Link
@@ -82,11 +82,11 @@ const Features = ({ stars }: { stars: number }) => {
             </h3>
 
             <p className="text-gray-500 mt-3">
-              At Dyo, we believe that you should be able to use your own domain
+              At Dub, we believe that you should be able to use your own domain
               when building your brand. That's why we offer free custom domains
               on all plans.
             </p>
-            <Link href="https://app.dyo.at">
+            <Link href="https://app.">
               <a className="rounded-full px-4 py-1.5 bg-black text-white hover:bg-white hover:text-black text-sm border border-black block max-w-fit transition-all">
                 Create your project
               </a>
@@ -106,10 +106,10 @@ const Features = ({ stars }: { stars: number }) => {
 
             <p className="text-gray-500 mt-3">
               We also believe QR codes and short links are like peas in a pod.
-              That's why we've built a QR code generator right into Dyo.
+              That's why we've built a QR code generator right into Dub.
             </p>
             <a
-              href="https://dyo.at/qrcode"
+              href="https:///qrcode"
               target="_blank"
               rel="noreferrer"
               className="rounded-full px-4 py-1.5 bg-black text-white hover:bg-white hover:text-black text-sm border border-black block max-w-fit transition-all"
@@ -132,7 +132,7 @@ const Features = ({ stars }: { stars: number }) => {
           <div className="flex items-center justify-center rounded-2xl w-full max-w-[700px] bg-gray-900 h-96">
             <div className="flex items-center">
               <a
-                href="https://github.com/dyonc/dyo"
+                href="https://github.com/steven-tey/dub"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center space-x-2 p-4 h-10 rounded-md bg-gray-800 border border-gray-600"
@@ -161,7 +161,7 @@ const Features = ({ stars }: { stars: number }) => {
               review, or contribute to it however you want!
             </p>
             <a
-              href="https://github.com/dyonc/dyo"
+              href="https://github.com/steven-tey/dub"
               target="_blank"
               rel="noreferrer"
               className="rounded-full px-4 py-1.5 bg-black text-white hover:bg-white hover:text-black text-sm border border-black block max-w-fit transition-all"

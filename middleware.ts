@@ -17,17 +17,18 @@ export const config = {
      * Match all paths except for:
      * 1. /api routes
      * 2. /_next (Next.js internals)
-     * 3. /static (inside /public)
-     * 4. all root files inside /public (e.g. /favicon.ico)
+     * 3. /_proxy & /_auth (special pages for OG tag proxying and password protection)
+     * 4. /static (inside /public)
+     * 5. all root files inside /public (e.g. /favicon.ico)
      */
-    "/((?!api|_next|static|va|[\\w-]+\\.\\w+).*)",
+    "/((?!api|_next|_proxy|_auth|static|va|[\\w-]+\\.\\w+).*)",
   ],
 };
 
 export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
-  const { hostname, key } = parse(req);
-  const home = HOME_HOSTNAMES.has(hostname);
-  const app = hostname === "app.dyo.at" || hostname === "app.localhost:3000";
+  const { domain, key } = parse(req);
+  const home = HOME_HOSTNAMES.has(domain);
+  const app = domain === "app." || domain === "app.localhost:3000";
 
   if (app) {
     return AppMiddleware(req);

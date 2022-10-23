@@ -1,35 +1,40 @@
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import { detectBot, parse } from "@/lib/middleware/utils";
 import { recordClick, redis } from "@/lib/upstash";
-import { LinkProps } from "../types";
 
 export default async function LinkMiddleware(
   req: NextRequest,
   ev: NextFetchEvent,
 ) {
   const url = req.nextUrl.clone();
-  const { hostname, key } = parse(req);
+  const { domain, key } = parse(req);
 
-  if (!hostname || !key) {
+  if (!domain || !key) {
     return NextResponse.next();
   }
 
-  const response = await redis.hget<Omit<LinkProps, "key">>(
-    `${hostname}:links`,
-    key,
-  );
-  const { url: target, description, image } = response || {};
+  const response = await redis.get<{
+    url: string;
+    password?: boolean;
+    proxy?: boolean;
+  }>(`${domain}:${key}`);
+  const { url: target, password, proxy } = response || {};
 
   if (target) {
-    const isBot = detectBot(req);
-
     // special case for link health monitoring with planetfall.io :)
-    const noTrack = req.headers.get("dyo-no-track");
-    if (!noTrack) ev.waitUntil(recordClick(hostname, req, key)); // track the click only if there is no `dyo-no-track` header
+    if (!req.headers.get("dub-no-track")) {
+      ev.waitUntil(recordClick(domain, req, key)); // track the click only if there is no `dub-no-track` header
+    }
 
-    if (image && description && isBot) {
-      // rewrite to proxy page (dyo.at/proxy/[domain]/[key])
-      return NextResponse.rewrite(`https://dyo.at/proxy/${hostname}/${key}`);
+    if (password && !req.cookies.get("dub_authenticated")) {
+      // rewrite to auth page (/_auth/[domain]/[key]) if the link is password protected and the user has not authenticated before
+      return NextResponse.rewrite(new URL(`/_auth/${domain}/${key}`, req.url));
+    }
+
+    const isBot = detectBot(req);
+    if (isBot && proxy) {
+      // rewrite to proxy page (/_proxy/[domain]/[key]) if it's a bot
+      return NextResponse.rewrite(`https:///_proxy/${domain}/${key}`);
     } else {
       return NextResponse.redirect(target);
     }

@@ -19,7 +19,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
       <Head />
       <MjmlBody width={500}>
         <MjmlWrapper cssClass="container">
-          <Header title="Welcome to Dyo" />
+          <Header title="Welcome to Dub" />
           <MjmlSection padding="0">
             <MjmlColumn>
               <MjmlImage
@@ -36,7 +36,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 Thanks for signing up{name && `, ${name}`}!
               </MjmlText>
               <MjmlText cssClass="paragraph">
-                My name is Steven, and I'm the creator of Dyo - the open-source
+                My name is Steven, and I'm the creator of Dub - the open-source
                 Bitly alternative. I'm excited to have you on board!
               </MjmlText>
               <MjmlText cssClass="paragraph">
@@ -44,26 +44,26 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Create a custom{" "}
-                <a href="https://app.dyo.at/links" target="_blank">
-                  Dyo short link
+                <a href="https://app./links" target="_blank">
+                   short link
                 </a>
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Create a new{" "}
-                <a href="https://app.dyo.at/" target="_blank">
+                <a href="https://app./" target="_blank">
                   project
                 </a>{" "}
                 and add your custom domain
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Star the repo on{" "}
-                <a href="https://github.com/dyonc/dyo" target="_blank">
+                <a href="https://github.com/steven-tey/dub" target="_blank">
                   GitHub
                 </a>
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Follow us on{" "}
-                <a href="https://twitter.com/DyonicLTD/" target="_blank">
+                <a href="https://twitter.com/dubdotsh/" target="_blank">
                   Twitter
                 </a>
               </MjmlText>
@@ -73,12 +73,12 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
                 P.S.: You'll receive an email from Trustpilot in the next couple
-                of days - if you enjoyed using Dyo, it would mean a lot if you
+                of days - if you enjoyed using Dub, it would mean a lot if you
                 could leave a review; if not, I'd love to hear what I can do to
-                improve Dyo!
+                improve Dub!
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dyo
+                Steven from Dub
               </MjmlText>
               <Divider />
             </MjmlColumn>

@@ -40,7 +40,7 @@ function UpgradePlanModal({
         <div className="flex flex-col justify-center items-center space-y-3 sm:px-16 px-4 pt-8 pb-24 border-b border-gray-200">
           <BlurImage
             src="/static/logo.png"
-            alt="Dyo logo"
+            alt="Dub logo"
             className="w-10 h-10 rounded-full border border-gray-200"
             width={20}
             height={20}
@@ -48,7 +48,7 @@ function UpgradePlanModal({
           <h3 className="font-medium text-xl">Upgrade to Pro</h3>
           <div className="flex space-x-2 items-center">
             <p className="text-sm text-gray-600">Billed Monthly</p>
-            <Switch setState={setAnnualBilling} />
+            <Switch fn={setAnnualBilling} />
             <p className="text-sm text-gray-600">Billed Annually</p>
           </div>
         </div>
@@ -119,7 +119,7 @@ function UpgradePlanModal({
             )}
           </button>
           <a
-            href="mailto:steven@dyo.at?subject=Upgrade%20to%20Enterprise%20Plan"
+            href="mailto:steven@?subject=Upgrade%20to%20Enterprise%20Plan"
             className="text-gray-500 text-sm hover:text-gray-700 transition-all"
           >
             Or contact us for Enterprise
