@@ -5,14 +5,14 @@ const Hero = () => {
   return (
     <div className="max-w-md sm:max-w-lg mt-20 mb-10 text-center mx-auto sm:px-0 px-2.5">
       <a
-        href="https:///launch"
+        href="https://dyo.at/launch"
         target="_blank"
         rel="noreferrer"
         className="bg-blue-100 hover:bg-blue-200 flex justify-center items-center space-x-2 max-w-fit px-7 py-2 mx-auto rounded-full overflow-hidden transition-all"
       >
         <Twitter className="w-5 h-5 text-[#1d9bf0]" />
         <p className="text-[#1d9bf0] font-semibold text-sm">
-          Introducing 
+          Introducing dyo.at
         </p>
       </a>
 
@@ -29,7 +29,7 @@ const Hero = () => {
       </p>
 
       <div className="mt-10 flex space-x-4 max-w-fit mx-auto">
-        <Link href="https://app./register">
+        <Link href="https://app.dyo.at/register">
           <a className="py-2 px-5 bg-black hover:bg-white rounded-full border border-black text-sm text-white hover:text-black transition-all">
             Start For Free
           </a>

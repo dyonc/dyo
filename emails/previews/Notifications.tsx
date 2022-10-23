@@ -24,7 +24,7 @@ export function UsageExceeded() {
 export function FeedbackEmail() {
   return (
     <FeedbackEmailChild
-      email="steven@"
+      email="steven@dyo.at"
       feedback="This is a 
 test feedback email"
     />

@@ -3,7 +3,7 @@ import { deleteLink, editLink } from "@/lib/api/links";
 import { withUserAuth } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 
-const domain = "";
+const domain = "dyo.at";
 
 export default withUserAuth(
   async (req: NextApiRequest, res: NextApiResponse, userId: string) => {

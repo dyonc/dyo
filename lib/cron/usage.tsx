@@ -158,8 +158,8 @@ const getUsage = async (
   const links = await prisma.link.findMany({
     where: {
       domain,
-      // only for , pull data for owner's usage only
-      ...(domain === "" && {
+      // only for dyo.at, pull data for owner's usage only
+      ...(domain === "dyo.at" && {
         userId: process.env.DUB_OWNER_ID,
       }),
     },

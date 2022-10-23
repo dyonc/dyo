@@ -57,7 +57,7 @@ export function nFormatter(num: number, digits?: number) {
 
 export function linkConstructor({
   key,
-  domain = "",
+  domain = "dyo.at",
   localhost,
   pretty,
   noDomain,
@@ -217,7 +217,7 @@ export const getApexDomain = (url: string) => {
     // otherwise, it's a subdomain (e.g. dub.vercel.app), so we return the last 2 parts
     return parts.slice(-2).join(".");
   }
-  // if it's a normal domain (e.g. ), we return the domain
+  // if it's a normal domain (e.g. dyo.at), we return the domain
   return domain;
 };
 

@@ -13,7 +13,7 @@ export default withProjectAuth(
       const newDomain = req.body;
 
       const validDomain =
-        validDomainRegex.test(newDomain) && !newDomain.endsWith(".");
+        validDomainRegex.test(newDomain) && !newDomain.endsWith(".dyo.at");
 
       if (!validDomain) {
         return res.status(422).json({

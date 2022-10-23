@@ -34,10 +34,10 @@ export default function PasswordProtectedLinkPage() {
       <main className="w-screen h-screen flex items-center justify-center bg-gray-50">
         <div className="w-full max-w-md shadow-xl rounded-2xl border border-gray-100 overflow-hidden">
           <div className="flex flex-col justify-center items-center space-y-3 text-center sm:px-16 px-4 pt-8 py-6 border-b border-gray-200 bg-white">
-            <a href="https://" target="_blank" rel="noreferrer">
+            <a href="https://dyo.at" target="_blank" rel="noreferrer">
               <BlurImage
                 src="/static/logo.png"
-                alt=" logo"
+                alt="dyo.at logo"
                 className="w-10 h-10 rounded-full"
                 width={20}
                 height={20}

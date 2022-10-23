@@ -35,7 +35,7 @@ export default withUserAuth(
         slugError = "Cannot use reserved slugs";
       }
       const validDomain =
-        validDomainRegex.test(domain) && !domain.endsWith(".");
+        validDomainRegex.test(domain) && !domain.endsWith(".dyo.at");
       if (slugError || !validDomain) {
         return res.status(422).json({
           slugError,

@@ -44,13 +44,13 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Create a custom{" "}
-                <a href="https://app./links" target="_blank">
-                   short link
+                <a href="https://app.dyo.at/links" target="_blank">
+                  dyo.at short link
                 </a>
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Create a new{" "}
-                <a href="https://app./" target="_blank">
+                <a href="https://app.dyo.at/" target="_blank">
                   project
                 </a>{" "}
                 and add your custom domain

@@ -15,8 +15,8 @@ export const FRAMER_MOTION_LIST_ITEM_VARIANTS = {
 
 export const HOME_HOSTNAMES = new Set([
   // comment for better diffs
-  "",
-  "preview.",
+  "dyo.at",
+  "preview.dyo.at",
   "localhost:3000",
 ]);
 
@@ -44,15 +44,15 @@ export const RESERVED_KEYS = new Set([
 ]);
 
 export const DEFAULT_REDIRECTS = {
-  home: "https://",
-  signin: "https://app./login",
-  login: "https://app./login",
-  register: "https://app./register",
-  signup: "https://app./register",
-  app: "https://app.",
-  dashboard: "https://app.",
-  links: "https://app./links",
-  settings: "https://app./settings",
+  home: "https://dyo.at",
+  signin: "https://app.dyo.at/login",
+  login: "https://app.dyo.at/login",
+  register: "https://app.dyo.at/register",
+  signup: "https://app.dyo.at/register",
+  app: "https://app.dyo.at",
+  dashboard: "https://app.dyo.at",
+  links: "https://app.dyo.at/links",
+  settings: "https://app.dyo.at/settings",
 };
 
 export const FREE_PLAN_PROJECT_LIMIT = 5;

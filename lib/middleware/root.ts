@@ -13,18 +13,18 @@ export default async function RootMiddleware(
   }
 
   if (
-    domain === "" ||
-    domain === "preview." ||
+    domain === "dyo.at" ||
+    domain === "preview.dyo.at" ||
     domain.endsWith(".vercel.app")
   ) {
-    ev.waitUntil(redis.incr(":root:clicks")); // increment root clicks (only for )
+    ev.waitUntil(redis.incr("dyo.at:root:clicks")); // increment root clicks (only for dyo.at)
   } else {
-    ev.waitUntil(recordClick(domain, req)); // record clicks on root page (if domain is not )
+    ev.waitUntil(recordClick(domain, req)); // record clicks on root page (if domain is not dyo.at)
   }
 
   if (
-    domain === "" ||
-    domain === "preview." ||
+    domain === "dyo.at" ||
+    domain === "preview.dyo.at" ||
     domain.endsWith(".vercel.app")
   ) {
     return NextResponse.next();

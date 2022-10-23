@@ -24,7 +24,7 @@ export default function ProjectSelect() {
       projects?.find((project) => project.slug === slug) || {
         name: session?.user?.name || session?.user?.email || "User",
         slug: "/",
-        domain: "",
+        domain: "dyo.at",
         logo:
           session?.user?.image ||
           `https://avatars.dicebear.com/api/micah/${session?.user?.email}.svg`,

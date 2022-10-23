@@ -1,4 +1,4 @@
-<a href="https://">
+<a href="https://dyo.at">
   <img alt="Dub – an open-source link shortener SaaS with built-in analytics + free custom domains." src="/public/static/thumbnail.png">
   <h1 align="center">Dub</h1>
 </a>
@@ -50,7 +50,7 @@ Add a custom OG image in front of your target URL. Bots like Twitter/Facebook wi
 
 You can deploy your own hosted version of Dub for greater privacy & control. Just click the link below to deploy a ready-to-go version of Dub to Vercel.
 
-[![Deploy with Vercel](https://vercel.com/button)](https:///deploy)
+[![Deploy with Vercel](https://vercel.com/button)](https://dyo.at/deploy)
 
 ## Tech Stack
 
@@ -70,8 +70,8 @@ Dub is built as a standard Next.js application with [Middleware](https://nextjs.
 [Redis](https://redis.io/) is used as the caching layer for all short links. Redis also has the Sorted Set data type, which is perfect for storing & retrieving time-series analytics data. Here's the full schema:
 
 - `{domain}:{key}` – string containing a JSON object with the target URL and password (optional). Also has an optional TTL.
-- `{domain}:clicks:{key}` – sorted set of all clicks for a given link (e.g. `:clicks:github`)
-- `{domain}:root:clicks` – sorted set of all root link clicks for a given domain (e.g. `:root:clicks`)
+- `{domain}:clicks:{key}` – sorted set of all clicks for a given link (e.g. `dyo.at:clicks:github`)
+- `{domain}:root:clicks` – sorted set of all root link clicks for a given domain (e.g. `dyo.at:root:clicks`)
 
 [MySQL](https://www.mysql.com/) is used as the database for storing user data, project data, and link metadata. You can refer to the Prisma schema [here](/prisma/schema.prisma).
 

@@ -160,11 +160,11 @@ const GlobeAnimation = ({
               This map shows the locations of the last 100 clicks on{" "}
               <a
                 className="text-blue-800 font-semibold"
-                href={domain ? `https://${domain}` : "https:///github"}
+                href={domain ? `https://${domain}` : "https://dyo.at/github"}
                 target="_blank"
                 rel="noreferrer"
               >
-                {domain || "/github"}
+                {domain || "dyo.at/github"}
               </a>{" "}
               in real time.
             </p>

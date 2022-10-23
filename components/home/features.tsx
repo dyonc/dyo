@@ -86,7 +86,7 @@ const Features = ({ stars }: { stars: number }) => {
               when building your brand. That's why we offer free custom domains
               on all plans.
             </p>
-            <Link href="https://app.">
+            <Link href="https://app.dyo.at">
               <a className="rounded-full px-4 py-1.5 bg-black text-white hover:bg-white hover:text-black text-sm border border-black block max-w-fit transition-all">
                 Create your project
               </a>
@@ -109,7 +109,7 @@ const Features = ({ stars }: { stars: number }) => {
               That's why we've built a QR code generator right into Dub.
             </p>
             <a
-              href="https:///qrcode"
+              href="https://dyo.at/qrcode"
               target="_blank"
               rel="noreferrer"
               className="rounded-full px-4 py-1.5 bg-black text-white hover:bg-white hover:text-black text-sm border border-black block max-w-fit transition-all"

@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { domain } = context.params as Params;
   return {
     props: {
-      domain: domain ? domain[0] : "",
+      domain: domain ? domain[0] : "dyo.at",
     },
   };
 };

@@ -43,7 +43,7 @@ const Demo = () => {
                 title="Maximum number of links reached. Swipe to delete existing links or
               create a free account."
                 cta="Start For Free"
-                ctaLink="https://app./register"
+                ctaLink="https://app.dyo.at/register"
               />
             }
           >
@@ -120,7 +120,7 @@ const Demo = () => {
         >
           Note: Public links will be automatically-deleted after 30 minutes.{" "}
           <a
-            href="https://app./register"
+            href="https://app.dyo.at/register"
             target="_blank"
             rel="noreferrer"
             className="text-gray-700 hover:text-black font-medium underline transition-all"

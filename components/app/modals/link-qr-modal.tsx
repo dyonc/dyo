@@ -129,7 +129,7 @@ function LinkQRModalHelper({
                     ...(showLogo && {
                       imageSettings: {
                         ...qrData.imageSettings,
-                        src: logo || "https:///static/logo.svg",
+                        src: logo || "https://dyo.at/static/logo.svg",
                       },
                     }),
                   }),
@@ -222,7 +222,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                     thumbTranslate="translate-x-6"
                     disabled={true}
                   />
-                  <p className="text-gray-600 text-sm">Show  Logo</p>
+                  <p className="text-gray-600 text-sm">Show dyo.at Logo</p>
                 </div>
               </Tooltip>
             ) : (
@@ -233,7 +233,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                   thumbDimensions="w-5 h-5"
                   thumbTranslate="translate-x-6"
                 />
-                <p className="text-gray-600 text-sm">Show  Logo</p>
+                <p className="text-gray-600 text-sm">Show dyo.at Logo</p>
               </div>
             )}
           </div>

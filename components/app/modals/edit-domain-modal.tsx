@@ -156,7 +156,7 @@ function EditDomainModal({
                   Domain is already in use.{" "}
                   <a
                     className="underline"
-                    href="mailto:steven@?subject=My Domain Is Already In Use"
+                    href="mailto:steven@dyo.at?subject=My Domain Is Already In Use"
                   >
                     Contact us
                   </a>{" "}

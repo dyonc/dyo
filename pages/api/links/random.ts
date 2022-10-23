@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   if (req.method === "GET") {
-    const response = await getRandomKey("");
+    const response = await getRandomKey("dyo.at");
     return res.status(200).json(response);
   } else {
     res.setHeader("Allow", ["GET"]);
