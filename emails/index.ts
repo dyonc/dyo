@@ -10,7 +10,7 @@ const sendMail = buildSendMail({
       pass: process.env.POSTMARK_API_KEY,
     },
   }),
-  defaultFrom: "Steven from Dyo <steven@dyo.at>",
+  defaultFrom: "Dyo <no-reply@dyo.at>",
   configPath: "./mailing.config.json",
 });
 
@@ -25,6 +25,6 @@ export const sendMarketingMail = buildSendMail({
       pass: process.env.POSTMARK_MARKETING_API_SECRET,
     },
   }),
-  defaultFrom: "Steven from Dyo <steven@ship.dyo.at>",
+  defaultFrom: "Dyo <no-reply@dyo.at>",
   configPath: "./mailing.config.json",
 });

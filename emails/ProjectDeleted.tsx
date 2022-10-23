@@ -62,7 +62,7 @@ export default function ProjectDeleted({
                 simply ignore this email.
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dyo
+                Dyo
               </MjmlText>
               <Divider />
             </MjmlColumn>

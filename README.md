@@ -83,12 +83,8 @@ We love our contributors! Here's how you can contribute:
 - Make a [pull request](https://github.com/dyonc/dyo/pull) to add new features/make quality-of-life improvements/fix bugs.
 
 <a href="https://github.com/dyonc/dyo/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=steven-tey/dub" />
+  <img src="https://contrib.rocks/image?repo=dyonc/dub" />
 </a>
-
-## Author
-
-- Steven Tey ([@steventey](https://twitter.com/steventey))
 
 ## License
 

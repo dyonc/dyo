@@ -26,7 +26,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 cssClass="hero"
                 padding="0"
                 align="left"
-                src="https://raw.githubusercontent.com/steven-tey/dyo/main/public/static/thumbnail.png"
+                src="https://raw.githubusercontent.com/dyonc/dyo/main/public/static/thumbnail.png"
               />
             </MjmlColumn>
           </MjmlSection>
@@ -36,7 +36,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 Thanks for signing up{name && `, ${name}`}!
               </MjmlText>
               <MjmlText cssClass="paragraph">
-                My name is Steven, and I'm the creator of Dyo - the open-source
+                My name is Thomas, and I'm the creator of Dyo - the open-source
                 Bitly alternative. I'm excited to have you on board!
               </MjmlText>
               <MjmlText cssClass="paragraph">
@@ -78,7 +78,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 improve Dyo!
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dyo
+                Dyo
               </MjmlText>
               <Divider />
             </MjmlColumn>

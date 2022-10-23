@@ -45,7 +45,7 @@ export default function Meta() {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@vercel" />
-      <meta name="twitter:creator" content="@steventey" />
+      <meta name="twitter:creator" content="@DyonicLTD" />
       <meta
         name="twitter:title"
         content="Dyo - Open-Source Bitly Alternative"

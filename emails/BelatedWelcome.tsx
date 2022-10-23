@@ -30,7 +30,7 @@ export default function WelcomeEmail({
                 cssClass="hero"
                 padding="0"
                 align="left"
-                src="https://raw.githubusercontent.com/steven-tey/dyo/main/public/static/thumbnail.png"
+                src="https://raw.githubusercontent.com/dyonc/dyo/main/public/static/thumbnail.png"
               />
             </MjmlColumn>
           </MjmlSection>
@@ -119,7 +119,7 @@ export default function WelcomeEmail({
                 </MjmlText>
               )}
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dyo
+                Dyo
               </MjmlText>
               <Divider />
             </MjmlColumn>

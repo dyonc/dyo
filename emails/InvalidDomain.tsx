@@ -75,7 +75,7 @@ export default function InvalidDomain({
                   : "this will be the last time I'll email you about this."}
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Steven from Dyo
+                  Dyo
               </MjmlText>
               <Divider />
             </MjmlColumn>

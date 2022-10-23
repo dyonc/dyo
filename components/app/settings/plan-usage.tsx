@@ -166,7 +166,7 @@ export default function PlanUsage() {
             <div className="flex space-x-3">
               {plan === "Pro 1M" && (
                 <a
-                  href="mailto:steven@dyo.at?subject=Upgrade%20to%20Enterprise%20Plan"
+                  href="mailto:office@dyo.at?subject=Upgrade%20to%20Enterprise%20Plan"
                   className="flex justify-center items-center bg-violet-600 text-white border-violet-600 hover:text-violet-600 hover:bg-white h-9 w-24 text-sm border rounded-md focus:outline-none transition-all ease-in-out duration-150"
                 >
                   Contact Us
