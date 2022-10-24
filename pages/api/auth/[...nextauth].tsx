@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
     EmailProvider({
       sendVerificationRequest({ identifier, url }) {
         sendMail({
-          subject: "Your dyo.at Login Link",
+          subject: "Your Dyo.at Login Link",
           to: identifier,
           component: <LoginLink url={url} />,
         });

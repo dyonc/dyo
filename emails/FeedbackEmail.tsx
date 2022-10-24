@@ -28,7 +28,7 @@ export default function FeedbackEmail({
             <MjmlColumn>
               <MjmlText cssClass="paragraph">
                 New feedback from{" "}
-                {email ? <strong>{email}</strong> : "a dyo.at user"}:
+                {email ? <strong>{email}</strong> : "a Dyo.at user"}:
               </MjmlText>
               <MjmlText cssClass="paragraph">{feedback}</MjmlText>
               <Divider />

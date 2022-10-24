@@ -17,7 +17,7 @@ const TabsHelper = (router: NextRouter): { name: string; href: string }[] => {
   }
   return [
     { name: "Projects", href: `/` },
-    { name: "dyo.at Links", href: `/links` },
+    { name: "Dyo.at Links", href: `/links` },
     { name: "Settings", href: `/settings` },
   ];
 };

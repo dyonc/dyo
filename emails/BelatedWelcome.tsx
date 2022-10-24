@@ -30,7 +30,7 @@ export default function WelcomeEmail({
                 cssClass="hero"
                 padding="0"
                 align="left"
-                src="https://raw.githubusercontent.com/dyonc/dyo/main/public/static/thumbnail.png"
+                src="https://raw.githubusercontent.com/dyonc/dyo/main/public/_static/thumbnail.png"
               />
             </MjmlColumn>
           </MjmlSection>
@@ -84,7 +84,7 @@ export default function WelcomeEmail({
                 In case you missed it, I also revamped our pricing model and
                 made it more affordable for everyone. You can read more about it{" "}
                 <a
-                  href="https://twitter.com/DyonicLTD/status/1579466952594292737"
+                  href="https://twitter.com/dubdotsh/status/1579466952594292737"
                   target="_blank"
                 >
                   here
@@ -96,7 +96,7 @@ export default function WelcomeEmail({
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Follow us on{" "}
-                <a href="https://twitter.com/DyonicLTD/" target="_blank">
+                <a href="https://twitter.com/DyonicLTD" target="_blank">
                   Twitter
                 </a>
               </MjmlText>

@@ -12,7 +12,7 @@ export default function NoProjectsPlaceholder({
         You don't have any projects yet!
       </h2>
       <BlurImage
-        src="/static/illustrations/shopping-call.svg"
+        src="/_static/illustrations/shopping-call.svg"
         alt="No links yet"
         width={400}
         height={400}
@@ -26,7 +26,7 @@ export default function NoProjectsPlaceholder({
       </button>
       <Link href="/links">
         <a className="text-gray-500 hover:text-gray-800 active:scale-95 mt-3 font-medium text-sm transition-all">
-          Add a dyo.at link instead
+          Add a Dyo.at link instead
         </a>
       </Link>
     </div>

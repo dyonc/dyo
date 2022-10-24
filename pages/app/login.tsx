@@ -18,8 +18,8 @@ export default function Login() {
         <div className="flex flex-col justify-center items-center space-y-3 text-center sm:px-16 px-4 pt-8 py-6 border-b border-gray-200 bg-white">
           <a href="https://dyo.at">
             <BlurImage
-              src="/static/logo.png"
-              alt="dyo.at logo"
+              src="/_static/logo.png"
+              alt="Dyo.at logo"
               className="w-10 h-10 rounded-full"
               width={20}
               height={20}

@@ -1,5 +1,6 @@
 import Image from "next/future/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { ReactNode } from "react";
 import { useSession } from "next-auth/react";
 import { Github, Logo, Twitter } from "@/components/shared/icons";
@@ -13,18 +14,20 @@ export default function HomeLayout({
   domain?: string;
 }) {
   const { data: session } = useSession();
+  const router = useRouter();
+  const { key } = router.query as { key?: string };
   return (
     <div className="min-h-screen flex flex-col justify-between">
       <Meta />
-      <div className="bg-white z-20">
+      <div className={`${key ? "bg-gray-50" : ""} z-20`}>
         <div className="max-w-screen-xl mx-auto px-5 md:px-20">
           <div className="h-16 flex justify-between items-center">
             <div className="flex items-center">
               {domain ? (
                 <a href="https://dyo.at" target="_blank" rel="noreferrer">
                   <Image
-                    src="/static/logotype.svg"
-                    alt="dyo.at logo"
+                    src="/_static/logotype.svg"
+                    alt="Dyo.at logo"
                     width={834}
                     height={236}
                     className="w-24"
@@ -34,8 +37,8 @@ export default function HomeLayout({
                 <Link href="/">
                   <a>
                     <Image
-                      src="/static/logotype.svg"
-                      alt="dyo.at logo"
+                      src="/_static/logotype.svg"
+                      alt="Dyo.at logo"
                       width={834}
                       height={236}
                       className="w-24"
@@ -63,20 +66,20 @@ export default function HomeLayout({
         </div>
       </div>
       {children}
-      <div className="border-t border-gray-200 h-20 flex items-center justify-center space-x-12">
+      <div className="border-t border-gray-200 h-20 flex items-center justify-center space-x-12 z-10">
         <a href="https://twitter.com/DyonicLTD" target="_blank" rel="noreferrer">
           <span className="sr-only">Twitter</span>
           <Twitter className="w-6 h-6 text-gray-600" />
         </a>
         {domain ? (
           <a href="https://dyo.at" target="_blank" rel="noreferrer">
-            <span className="sr-only">dyo.at Logo</span>
+            <span className="sr-only">Dyo.at Logo</span>
             <Logo className="w-7 h-7 text-gray-600" />
           </a>
         ) : (
           <Link href="/">
             <a>
-              <span className="sr-only">dyo.at Logo</span>
+              <span className="sr-only">Dyo.at Logo</span>
               <Logo className="w-7 h-7 text-gray-600" />
             </a>
           </Link>

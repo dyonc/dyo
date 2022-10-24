@@ -19,7 +19,7 @@ export default async function handler(
     }
 
     const response = await sendMail({
-      to: "office@dyo.at",
+      to: "steven@dyo.at",
       from: "feedback@dyo.at",
       ...(email && { replyTo: email }),
       subject: "🎉 New Feedback Received!",

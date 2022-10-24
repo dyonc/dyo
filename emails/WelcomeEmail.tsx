@@ -26,7 +26,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 cssClass="hero"
                 padding="0"
                 align="left"
-                src="https://raw.githubusercontent.com/dyonc/dyo/main/public/static/thumbnail.png"
+                src="https://dyo.at/_static/thumbnail.png"
               />
             </MjmlColumn>
           </MjmlSection>
@@ -36,7 +36,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 Thanks for signing up{name && `, ${name}`}!
               </MjmlText>
               <MjmlText cssClass="paragraph">
-                My name is Thomas, and I'm the creator of Dyo - the open-source
+                My name is Steven, and I'm the creator of Dyo - the open-source
                 Bitly alternative. I'm excited to have you on board!
               </MjmlText>
               <MjmlText cssClass="paragraph">
@@ -45,7 +45,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Create a custom{" "}
                 <a href="https://app.dyo.at/links" target="_blank">
-                  dyo.at short link
+                  Dyo.at short link
                 </a>
               </MjmlText>
               <MjmlText cssClass="li">
@@ -63,7 +63,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Follow us on{" "}
-                <a href="https://twitter.com/DyonicLTD/" target="_blank">
+                <a href="https://twitter.com/DyonicLTD" target="_blank">
                   Twitter
                 </a>
               </MjmlText>

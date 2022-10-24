@@ -12,7 +12,7 @@ export default function Links() {
       <div className="h-36 flex items-center bg-white border-b border-gray-200">
         <MaxWidthWrapper>
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl text-gray-600">My dyo.at Links</h1>
+            <h1 className="text-2xl text-gray-600">My Dyo.at Links</h1>
             <AddEditLinkButton />
           </div>
         </MaxWidthWrapper>

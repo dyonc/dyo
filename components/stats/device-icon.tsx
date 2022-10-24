@@ -15,7 +15,7 @@ export default function DeviceIcon({
     return (
       <img
         alt={display}
-        src={`https://avatars.dicebear.com/api/bottts/dyo.svg`}
+        src={`https://avatars.dicebear.com/api/bottts/dub.svg`}
         className={className}
       />
     );
@@ -55,7 +55,7 @@ export default function DeviceIcon({
     if (display === "Mac OS") {
       return (
         <BlurImage
-          src="/static/icons/macos.png"
+          src="/_static/icons/macos.png"
           alt={display}
           width={20}
           height={20}

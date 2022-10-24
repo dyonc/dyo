@@ -49,7 +49,7 @@ function LinkQRModalHelper({
   const qrLogoUrl = useMemo(() => {
     if (logo) return logo;
     return typeof window !== "undefined" && window.location.origin
-      ? new URL("/static/logo.svg", window.location.origin).href
+      ? new URL("/_static/logo.svg", window.location.origin).href
       : "";
   }, []);
 
@@ -129,7 +129,7 @@ function LinkQRModalHelper({
                     ...(showLogo && {
                       imageSettings: {
                         ...qrData.imageSettings,
-                        src: logo || "https://dyo.at/static/logo.svg",
+                        src: logo || "https://dyo.at/_static/logo.svg",
                       },
                     }),
                   }),
@@ -222,7 +222,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                     thumbTranslate="translate-x-6"
                     disabled={true}
                   />
-                  <p className="text-gray-600 text-sm">Show dyo.at Logo</p>
+                  <p className="text-gray-600 text-sm">Show Dyo.at Logo</p>
                 </div>
               </Tooltip>
             ) : (
@@ -233,7 +233,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                   thumbDimensions="w-5 h-5"
                   thumbTranslate="translate-x-6"
                 />
-                <p className="text-gray-600 text-sm">Show dyo.at Logo</p>
+                <p className="text-gray-600 text-sm">Show Dyo.at Logo</p>
               </div>
             )}
           </div>

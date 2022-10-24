@@ -76,8 +76,8 @@ function AddEditLinkModal({
       };
     } else {
       return {
-        avatar: "/static/logo.png",
-        alt: "dyo.at",
+        avatar: "/_static/logo.png",
+        alt: "Dyo.at",
         copy: "Add a new link",
       };
     }
