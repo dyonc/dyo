@@ -146,7 +146,7 @@ export function OGImageProxy() {
     <div className="max-w-md flex flex-col text-center items-center space-y-5 p-5">
       <BlurImage
         alt="Demo GIF for OG Image Proxy"
-        src="https://res.cloudinary.com/dyodotsh/image/upload/v1664425639/og-image-proxy-demo.gif"
+        src="https://res.cloudinary.com/dubdotsh/image/upload/v1664425639/og-image-proxy-demo.gif"
         width={1200}
         height={1084}
         className="w-full rounded-md overflow-hidden shadow-md"
