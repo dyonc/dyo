@@ -27,7 +27,7 @@ export default function HomeLayout({
                 <a href="https://dyo.at" target="_blank" rel="noreferrer">
                   <Image
                     src="/_static/logotype.svg"
-                    alt="Dyo.at logo"
+                    alt="Dyo Logo"
                     width={834}
                     height={236}
                     className="w-24"
@@ -38,7 +38,7 @@ export default function HomeLayout({
                   <a>
                     <Image
                       src="/_static/logotype.svg"
-                      alt="Dyo.at logo"
+                      alt="Dyo logo"
                       width={834}
                       height={236}
                       className="w-24"
@@ -73,13 +73,13 @@ export default function HomeLayout({
         </a>
         {domain ? (
           <a href="https://dyo.at" target="_blank" rel="noreferrer">
-            <span className="sr-only">Dyo.at Logo</span>
+            <span className="sr-only">Dyo Logo</span>
             <Logo className="w-7 h-7 text-gray-600" />
           </a>
         ) : (
           <Link href="/">
             <a>
-              <span className="sr-only">Dyo.at Logo</span>
+              <span className="sr-only">Dyo Logo</span>
               <Logo className="w-7 h-7 text-gray-600" />
             </a>
           </Link>

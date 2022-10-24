@@ -37,7 +37,7 @@ export default function PasswordProtectedLinkPage() {
             <a href="https://dyo.at" target="_blank" rel="noreferrer">
               <BlurImage
                 src="/_static/logo.png"
-                alt="Dyo.at logo"
+                alt="Dyo logo"
                 className="w-10 h-10 rounded-full"
                 width={20}
                 height={20}

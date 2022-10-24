@@ -222,7 +222,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                     thumbTranslate="translate-x-6"
                     disabled={true}
                   />
-                  <p className="text-gray-600 text-sm">Show Dyo.at Logo</p>
+                  <p className="text-gray-600 text-sm">Show Dyo Logo</p>
                 </div>
               </Tooltip>
             ) : (
@@ -233,7 +233,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                   thumbDimensions="w-5 h-5"
                   thumbTranslate="translate-x-6"
                 />
-                <p className="text-gray-600 text-sm">Show Dyo.at Logo</p>
+                <p className="text-gray-600 text-sm">Show Dyo Logo</p>
               </div>
             )}
           </div>

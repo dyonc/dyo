@@ -26,7 +26,7 @@ export default function NoProjectsPlaceholder({
       </button>
       <Link href="/links">
         <a className="text-gray-500 hover:text-gray-800 active:scale-95 mt-3 font-medium text-sm transition-all">
-          Add a Dyo.at link instead
+          Add a Dyo link instead
         </a>
       </Link>
     </div>

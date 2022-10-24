@@ -45,7 +45,7 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Create a custom{" "}
                 <a href="https://app.dyo.at/links" target="_blank">
-                  Dyo.at short link
+                  Dyo short link
                 </a>
               </MjmlText>
               <MjmlText cssClass="li">
