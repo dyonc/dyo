@@ -96,9 +96,6 @@ export default function LinkCard({
           }
           if (hashes && setHashes) {
             setHashes(hashes.filter((hash) => hash.key !== key));
-            toast.success("Link deleted.");
-          } else {
-            sendErrorToast(); // debounce to prevent multiple toasts
           }
         }
       }
