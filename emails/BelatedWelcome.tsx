@@ -40,18 +40,12 @@ export default function WelcomeEmail({
                 Welcome to Dyo - the open-source Bitly alternative!
               </MjmlText>
               <MjmlText cssClass="paragraph">
-                Apologies for the belated welcome message - I just{" "}
-                <a
-                  href="https://twitter.com/steventey/status/1579471673325408257"
-                  target="_blank"
-                >
-                  got transactional emails working
-                </a>{" "}
+                Apologies for the belated welcome message - we just got transactional emails working
                 this weekend.
               </MjmlText>
               {domains ? (
                 <MjmlText cssClass="paragraph">
-                  I noticed that you've been successfully using Dyo with your
+                  We noticed that you've been successfully using Dyo with your
                   custom domain
                   {domains.length > 1 ? "s" : ""}{" "}
                   {domains.map((domain) => (
@@ -70,26 +64,19 @@ export default function WelcomeEmail({
                       {", "}
                     </span>
                   ))}{" "}
-                  and I wanted to reach out to ask if you have any feedback or
-                  suggestions for Dyo? I'd love to hear from you!
+                  and we wanted to reach out to ask if you have any feedback or
+                  suggestions for Dyo? we'd love to hear from you!
                 </MjmlText>
               ) : (
                 <MjmlText cssClass="paragraph">
-                  I noticed that you recently signed up for Dyo but haven't
-                  successfully connected a custom domain yet, and I wanted to
+                  We noticed that you recently signed up for Dyo but haven't
+                  successfully connected a custom domain yet, and we wanted to
                   reach out to ask if you have any questions about that?
                 </MjmlText>
               )}
               <MjmlText cssClass="paragraph">
-                In case you missed it, I also revamped our pricing model and
-                made it more affordable for everyone. You can read more about it{" "}
-                <a
-                  href="https://twitter.com/dubdotsh/status/1579466952594292737"
-                  target="_blank"
-                >
-                  here
-                </a>
-                .
+                In case you missed it, we also revamped our pricing model and
+                made it more affordable for everyone.
               </MjmlText>
               <MjmlText cssClass="paragraph">
                 If you haven't already, here are a few more things you can do:
@@ -110,7 +97,7 @@ export default function WelcomeEmail({
                 <MjmlText cssClass="paragraph" color={grayDark}>
                   P.S.: You'll receive an email from Trustpilot in the next
                   couple of days - if you enjoyed using Dyo, it would mean a lot
-                  if you could leave a review; if not, I'd love to hear what I
+                  if you could leave a review; if not, we'd love to hear what we
                   can do to improve Dyo!
                 </MjmlText>
               ) : (
@@ -119,7 +106,8 @@ export default function WelcomeEmail({
                 </MjmlText>
               )}
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Dyo
+                Over and out,
+                The Dyo team
               </MjmlText>
               <Divider />
             </MjmlColumn>

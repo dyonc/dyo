@@ -8,5 +8,5 @@ export function LoginLink() {
 }
 
 export function WelcomeEmail() {
-  return <WelcomeEmailChild name="Steven Tey" />;
+  return <WelcomeEmailChild name="Dyo" />;
 }

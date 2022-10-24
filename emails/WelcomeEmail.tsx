@@ -36,8 +36,8 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 Thanks for signing up{name && `, ${name}`}!
               </MjmlText>
               <MjmlText cssClass="paragraph">
-                My name is Steven, and I'm the creator of Dyo - the open-source
-                Bitly alternative. I'm excited to have you on board!
+                We are Dyonic, the creators of Dyo - the open-source
+                Bitly alternative. We are excited to have you on board!
               </MjmlText>
               <MjmlText cssClass="paragraph">
                 Here are a few things you can do:
@@ -68,17 +68,18 @@ export default function WelcomeEmail({ name }: { name?: string }): JSX.Element {
                 </a>
               </MjmlText>
               <MjmlText cssClass="paragraph">
-                Let me know if you have any questions or feedback. I'm always
+                Let me know if you have any questions or feedback. We always
                 happy to help!
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
                 P.S.: You'll receive an email from Trustpilot in the next couple
                 of days - if you enjoyed using Dyo, it would mean a lot if you
-                could leave a review; if not, I'd love to hear what I can do to
+                could leave a review; if not, we'd love to hear what we can do to
                 improve Dyo!
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Dyo
+                Over and out,
+                The Dyo team
               </MjmlText>
               <Divider />
             </MjmlColumn>
