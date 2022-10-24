@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import { ReactNode } from "react";
 import { Toaster } from "react-hot-toast";
 import { Divider, Logo } from "@/components/shared/icons";
