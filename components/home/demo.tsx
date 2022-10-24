@@ -109,11 +109,6 @@ const Demo = () => {
             setShowDefaultLink={setShowDefaultLink}
           />
         )}
-        <LinkCard
-          key="github"
-          _key="github"
-          url={"https://github.com/dyonc/dyo"}
-        />
         {hashes.map(({ key, url }) => (
           <LinkCard
             key={key}
@@ -126,7 +121,6 @@ const Demo = () => {
         {Array.from({
           length: showDefaultLink ? 3 - hashes.length : 4 - hashes.length,
         }).map((_, i) => (
-        {Array.from({ length: 3 - hashes.length }).map((_, i) => (
           <PlaceholderCard key={i} />
         ))}
         <motion.li
