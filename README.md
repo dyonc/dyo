@@ -1,5 +1,4 @@
 <a href="https://dyo.at">
-  <img alt="Dyo – an open-source link shortener SaaS with built-in analytics + free custom domains." src="/public/_static/thumbnail.png">
   <h1 align="center">Dyo</h1>
 </a>
 
@@ -26,25 +25,17 @@ Here are some of the features that Dyo provides out-of-the-box:
 
 Dyo provides a powerful analytics dashboard for your links, including geolocation, device, and browser information.
 
-![Analytics Dashboard](/public/_static/landing/analytics.png)
-
 ### Custom domains
 
 You can easily configure custom domains on Dyo – just add an A/CNAME record to your DNS provider and you're good to go. This is built on the [Vercel Domains API](https://domains-api.vercel.app/).
-
-![Custom Domains](/public/_static/landing/domains.png)
 
 ### QR Code Generator
 
 You can easily generate and customize QR codes for your links, which can be used for flyers, posters, powerpoint presentations, etc.
 
-![QR Code](/public/_static/landing/qr.png)
-
 ### OG Image Proxy
 
 Add a custom OG image in front of your target URL. Bots like Twitter/Facebook will be served this image, while users will be redirected to your target URL.
-
-![OG Image Proxy](/public/_static/landing/og-image-proxy.gif)
 
 ## Deploy Your Own
 
