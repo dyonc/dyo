@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getLinkClicksCount } from "@/lib/upstash";
+import prisma from "@/lib/prisma";
 
 // This is a special route to check if a custom dyo.at links exists
 
