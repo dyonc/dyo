@@ -60,7 +60,8 @@ export default function UsageExceeded({
                 or reply to let me know if you have any questions!
               </MjmlText>
               <MjmlText cssClass="paragraph" color={grayDark}>
-                Dyo
+                Over and out,
+                The Dyo team
               </MjmlText>
               <Divider />
             </MjmlColumn>

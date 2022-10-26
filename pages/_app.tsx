@@ -10,8 +10,8 @@ function MyApp({
 }: AppProps<{ session: Session }>) {
   return (
     <SessionProvider session={session}>
-    <Component {...pageProps} />
-    <Analytics />
+      <Component {...pageProps} />
+      <Analytics />
     </SessionProvider>
   );
 }
