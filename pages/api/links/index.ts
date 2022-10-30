@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { addLink, getLinksForProject } from "@/lib/api/links";
-import { withUserAuth } from "@/lib/auth";
+import { Session, withUserAuth } from "@/lib/auth";
 
 // This is a special route for retrieving and creating custom dyo.at links.
 
 export default withUserAuth(
-  async (req: NextApiRequest, res: NextApiResponse, userId: string) => {
+  async (req: NextApiRequest, res: NextApiResponse, session: Session) => {
     // GET /api/links – get all dyo.at links created by the user
     if (req.method === "GET") {
       const { status, sort } = req.query as {
@@ -16,7 +16,7 @@ export default withUserAuth(
         domain: "dyo.at",
         status,
         sort,
-        userId,
+        userId: session.user.id,
       });
       return res.status(200).json(response);
 
@@ -29,7 +29,7 @@ export default withUserAuth(
       const response = await addLink({
         ...req.body,
         domain: "dyo.at",
-        userId,
+        userId: session.user.id,
       });
 
       if (response === null) {

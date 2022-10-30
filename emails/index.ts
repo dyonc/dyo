@@ -25,6 +25,6 @@ export const sendMarketingMail = buildSendMail({
       pass: process.env.POSTMARK_MARKETING_API_SECRET,
     },
   }),
-  defaultFrom: "Dyo Newsletter <no-reply@dyo.at>",
+  defaultFrom: "Dyo <no-reply@dyo.at>",
   configPath: "./mailing.config.json",
 });

@@ -15,11 +15,14 @@ export default function ProjectSelect() {
   const { AddProjectModal, setShowAddProjectModal } = useAddProjectModal({});
 
   const router = useRouter();
+  const { slug, key } = router.query as {
+    slug?: string;
+    key?: string;
+  };
 
   const { data: session } = useSession();
 
   const selected = useMemo(() => {
-    const { slug } = router.query;
     return (
       projects?.find((project) => project.slug === slug) || {
         name: session?.user?.name || session?.user?.email || "User",
@@ -30,18 +33,18 @@ export default function ProjectSelect() {
           `https://avatars.dicebear.com/api/micah/${session?.user?.email}.svg`,
       }
     );
-  }, [router, projects, session]);
+  }, [slug, projects, session]);
   const [openPopover, setOpenPopover] = useState(false);
 
   if (!projects || !router.isReady)
     return (
-      <div className="flex h-12 w-60 animate-pulse items-center justify-end rounded-lg bg-gray-100 px-2">
+      <div className="flex h-12 w-32 animate-pulse items-center justify-end rounded-lg bg-gray-100 px-2 sm:w-60">
         <ChevronUpDown className="h-4 w-4 text-gray-400" aria-hidden="true" />
       </div>
     );
 
   return (
-    <div className="w-60">
+    <div className={`${key && slug ? "w-32" : "w-48"} sm:w-60`}>
       <AddProjectModal />
       <Popover
         content={
@@ -56,7 +59,9 @@ export default function ProjectSelect() {
       >
         <button
           onClick={() => setOpenPopover(!openPopover)}
-          className="relative w-60 cursor-pointer rounded-lg bg-white py-1.5 pl-3 pr-10 text-left text-sm transition-all duration-75 hover:bg-gray-100 focus:outline-none active:bg-gray-200"
+          className={`relative ${
+            key && slug ? "w-32" : "w-48"
+          } cursor-pointer rounded-lg bg-white py-1.5 pl-1 text-left text-sm transition-all duration-75 hover:bg-gray-100 focus:outline-none active:bg-gray-200 sm:w-60 sm:pl-3 sm:pr-10`}
         >
           <div className="flex items-center justify-start space-x-3">
             <BlurImage
@@ -65,7 +70,7 @@ export default function ProjectSelect() {
                 `https://www.google.com/s2/favicons?sz=64&domain_url=${selected.domain}`
               }
               alt={selected.slug}
-              className="h-8 w-8 flex-shrink-0 overflow-hidden rounded-full"
+              className="h-6 w-6 flex-shrink-0 overflow-hidden rounded-full sm:h-8 sm:w-8"
               width={48}
               height={48}
             />
@@ -73,7 +78,7 @@ export default function ProjectSelect() {
               {selected.name}
             </span>
           </div>
-          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 sm:pr-2">
             <ChevronUpDown
               className="h-4 w-4 text-gray-400"
               aria-hidden="true"

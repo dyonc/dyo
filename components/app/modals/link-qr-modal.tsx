@@ -208,7 +208,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
               <Tooltip
                 content={
                   <TooltipContent
-                    title="As a freemium product, we rely on word of mouth to spread the word about Dyo. If you'd like to remove the Dyo Logo/upload your own, please consider upgrading to a Pro plan."
+                    title="As a freemium product, we rely on word of mouth to spread the word about Dyo. If you'd like to remove the Dyo logo/upload your own, please consider upgrading to a Pro plan."
                     cta="Upgrade to Pro"
                     ctaLink={isApp ? "/settings" : "/#pricing"}
                   />

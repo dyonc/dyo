@@ -40,7 +40,7 @@ function UpgradePlanModal({
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 px-4 pt-8 pb-24 sm:px-16">
           <BlurImage
             src="/_static/logo.png"
-            alt="Dyo Logo"
+            alt="Dyo logo"
             className="h-10 w-10 rounded-full border border-gray-200"
             width={20}
             height={20}
