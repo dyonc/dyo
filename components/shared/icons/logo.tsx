@@ -5,7 +5,6 @@ export default function Logo({ className }: { className: string }) {
       height="191"
       fill="currentColor"
       viewBox="0 0 1396.8 846.9"
-      className={className}
     >
       <g clipPath="url(#clip0_36_30)">
         <path 
