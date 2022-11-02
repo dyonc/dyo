@@ -83,7 +83,7 @@ export default function WelcomeEmail({
               </MjmlText>
               <MjmlText cssClass="li">
                 •&nbsp;&nbsp;Follow us on{" "}
-                <a href="https://twitter.com/DyonicLTD/" target="_blank">
+                <a href="https://twitter.com/DyonicLTD" target="_blank">
                   Twitter
                 </a>
               </MjmlText>

@@ -65,7 +65,7 @@ export default function Feedback() {
               <input
                 name="email"
                 type="email"
-                placeholder="panic@thedis.co"
+                placeholder="my@email.com"
                 autoComplete="email"
                 onChange={(e) => setData({ ...data, email: e.target.value })}
                 className="block w-full rounded-md border-gray-300 pr-10 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm"
