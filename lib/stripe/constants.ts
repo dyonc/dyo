@@ -11,7 +11,7 @@ export const PRO_TIERS = [
         amount: 9,
         priceIds: {
           test: "price_1LwXmuADnYKBkDPx234PZXkC",
-          production: "price_1LwXgIADnYKBkDPxvI3gkHEY",
+          production: "price_1M02S6ADnYKBkDPxrnhnCCfA",
         },
       },
       yearly: {
@@ -38,7 +38,7 @@ export const PRO_TIERS = [
         amount: 190,
         priceIds: {
           test: "price_1LwXmMADnYKBkDPxEWvDyPjd",
-          production: "price_1LwXhGADnYKBkDPxE15hsTtr",
+          production: "price_1M02Q6ADnYKBkDPxzCpVCjXw",
         },
       },
     },
@@ -118,7 +118,7 @@ export const PRO_TIERS = [
         amount: 990,
         priceIds: {
           test: "price_1LwXetADnYKBkDPxUuxfKHYb",
-          production: "price_1LwXdEADnYKBkDPx3Ht7K6Nf",
+          production: "price_1M02QvADnYKBkDPx8dNt2ArC",
         },
       },
     },
