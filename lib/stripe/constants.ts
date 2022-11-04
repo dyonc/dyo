@@ -11,14 +11,14 @@ export const PRO_TIERS = [
         amount: 9,
         priceIds: {
           test: "price_1LwXmuADnYKBkDPx234PZXkC",
-          production: "price_1M02S6ADnYKBkDPxrnhnCCfA",
+          production: "price_1LwXgIADnYKBkDPxvI3gkHEY",
         },
       },
       yearly: {
         amount: 90,
         priceIds: {
           test: "price_1LwXmuADnYKBkDPx661PONOn",
-          production: "price_1LwXgIADnYKBkDPxz7QU3ISq",
+          production: "price_1M02S6ADnYKBkDPxrnhnCCfA",
         },
       },
     },

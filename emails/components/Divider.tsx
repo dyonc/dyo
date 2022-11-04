@@ -19,7 +19,7 @@ export default function Divider({
         borderColor={grayDark}
         borderWidth="1px"
         padding={bottomPadding ? "24px" : "24px 24px 0px"}
-        ></MjmlDivider>
+      ></MjmlDivider>
     </>
   );
 }
