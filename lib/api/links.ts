@@ -1,5 +1,5 @@
 import cloudinary from "cloudinary";
-import { DEFAULT_REDIRECTS, RESERVED_KEYS } from "@/lib/constants/countries";
+import { DEFAULT_REDIRECTS, RESERVED_KEYS } from "@/lib/constants";
 import prisma from "@/lib/prisma";
 import { LinkProps } from "@/lib/types";
 import { redis } from "@/lib/upstash";

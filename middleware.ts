@@ -3,7 +3,7 @@ import {
   DEFAULT_REDIRECTS,
   HOME_HOSTNAMES,
   RESERVED_KEYS,
-} from "@/lib/constants/countries";
+} from "@/lib/constants";
 import {
   AppMiddleware,
   LinkMiddleware,

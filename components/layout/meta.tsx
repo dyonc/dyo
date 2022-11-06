@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { FAVICON_FOLDER } from "@/lib/constants/countries";
+import { FAVICON_FOLDER } from "@/lib/constants";
 
 export default function Meta() {
   return (
