@@ -1,10 +1,7 @@
 const RESERVED_KEYS = new Set([
   "api",
   "va",
-  "dyo",
   "dyonic",
-  "ceo",
-  "test",
   "static",
   "stats",
   "proxy",
