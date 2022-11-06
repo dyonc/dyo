@@ -221,7 +221,7 @@ export const getApexDomain = (url: string) => {
     // otherwise, it's a subdomain (e.g. dyo.vercel.app), so we return the last 2 parts
     return parts.slice(-2).join(".");
   }
-  // if it's a normal domain (e.g. dyo.at), we return the domain
+  // if it's a normal domain (e.g. dyo.sh), we return the domain
   return domain;
 };
 
@@ -285,4 +285,36 @@ export const getQueryString = (router: NextRouter) => {
 export const truncate = (str: string, length: number) => {
   if (str.length <= length) return str;
   return `${str.slice(0, length)}...`;
+};
+
+const logTypeToEnv = {
+  cron: process.env.DYO_SLACK_HOOK_CRON,
+  links: process.env.DYO_SLACK_HOOK_LINKS,
+};
+
+export const log = async (message: string, type: "cron" | "links") => {
+  /* Log a message to the console */
+  const HOOK = logTypeToEnv[type];
+  if (!HOOK) return;
+  try {
+    return await fetch(HOOK, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: message,
+            },
+          },
+        ],
+      }),
+    });
+  } catch (e) {
+    console.log(`Failed to log to Vercel Slack. Error: ${e}`);
+  }
 };

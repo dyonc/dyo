@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { addLink, getLinksForProject } from "@/lib/api/links";
 import { Session, withUserAuth } from "@/lib/auth";
-import { SECOND_LEVEL_DOMAINS } from "@/lib/constants";
+import { BLACKLIST } from "@/lib/constants";
 import { getDomainWithoutWWW } from "@/lib/utils";
+import { log } from "@/lib/utils";
 
 // This is a special route for retrieving and creating custom dyo.at links.
 
@@ -28,7 +29,7 @@ export default withUserAuth(
       if (!key || !url) {
         return res.status(400).json({ error: "Missing key or url" });
       }
-      if (SECOND_LEVEL_DOMAINS.has(getDomainWithoutWWW(url))) {
+      if (BLACKLIST.has(getDomainWithoutWWW(url))) {
         return res.status(400).json({ error: "Invalid url" });
       }
       const response = await addLink({
@@ -40,6 +41,7 @@ export default withUserAuth(
       if (response === null) {
         return res.status(403).json({ error: "Key already exists" });
       }
+      await log(`${session.user.email} created a new link for ${url}`, "links");
       return res.status(200).json(response);
     } else {
       res.setHeader("Allow", ["GET", "POST"]);

@@ -1,8 +1,19 @@
+/*
+ ************************************************
+ * Crowdsourced list of blacklisted domains
+ ************************************************
+ * How to contribute:
+ * 1. Find a domain that you think should be blacklisted (contain phishing links, spam links, pornographic content, etc.)
+ * 2. Do a "CMD/CTRL + F" search for the domain in this file
+ * 3. If the domain is not found, make a pull request with the domain added to the blacklist
+ */
+
 const BLACKLIST = new Set([
   "lopescarvalho.adv.br",
   "piracynchill.in",
   "tgnewstv.it",
   "secure.oldschool.com-os.cz",
+  "secure.oldschool.com-rr.cz",
   "rfiptv.xyz",
   "uiptv.ml",
   "8wogq.app.link",
