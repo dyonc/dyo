@@ -8,7 +8,7 @@ import { useLinkQRModal } from "@/components/app/modals/link-qr-modal";
 import BlurImage from "@/components/shared/blur-image";
 import CopyButton from "@/components/shared/copy-button";
 import { Chart, LoadingDots, QR } from "@/components/shared/icons";
-import { FRAMER_MOTION_LIST_ITEM_VARIANTS } from "@/lib/constants/countries";
+import { FRAMER_MOTION_LIST_ITEM_VARIANTS } from "@/lib/constants";
 import { SimpleLinkProps } from "@/lib/types";
 import {
   fetcher,
