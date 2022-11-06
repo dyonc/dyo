@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { HOME_HOSTNAMES } from "@/lib/constants";
+import { HOME_HOSTNAMES } from "@/lib/constants/countries";
 
 export const parse = (req: NextRequest) => {
   let domain = req.headers.get("host");

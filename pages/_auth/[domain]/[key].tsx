@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import BlurImage from "@/components/shared/blur-image";
 import { AlertCircleFill, LoadingDots } from "@/components/shared/icons";
-import { FAVICON_FOLDER } from "@/lib/constants";
+import { FAVICON_FOLDER } from "@/lib/constants/countries";
 
 const title = "Password Required";
 const description =

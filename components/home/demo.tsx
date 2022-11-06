@@ -5,7 +5,7 @@ import LinkCard from "@/components/home/link-card";
 import PlaceholderCard from "@/components/home/placeholder-card";
 import { Link, LoadingDots } from "@/components/shared/icons";
 import Tooltip, { TooltipContent } from "@/components/shared/tooltip";
-import { FRAMER_MOTION_LIST_ITEM_VARIANTS } from "@/lib/constants";
+import { FRAMER_MOTION_LIST_ITEM_VARIANTS } from "@/lib/constants/countries";
 import useLocalStorage from "@/lib/hooks/use-local-storage";
 import { SimpleLinkProps } from "@/lib/types";
 

@@ -1,5 +1,5 @@
 import { NextRequest, userAgent } from "next/server";
-import { COUNTRIES } from "@/lib/constants";
+import { COUNTRIES } from "@/lib/constants/countries";
 
 export interface RawStatsProps {
   geo: NextRequest["geo"];

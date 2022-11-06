@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useMemo } from "react";
 import BadgeSelect from "@/components/shared/badge-select";
 import { ExpandingArrow } from "@/components/shared/icons";
-import { INTERVALS } from "@/lib/constants";
+import { INTERVALS } from "@/lib/constants/countries";
 import useScroll from "@/lib/hooks/use-scroll";
 import { IntervalProps } from "@/lib/stats";
 import { linkConstructor } from "@/lib/utils";

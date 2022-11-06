@@ -6,7 +6,7 @@ import ProjectCardPlaceholder from "@/components/app/project-card-placeholder";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
 import Tooltip, { TooltipContent } from "@/components/shared/tooltip";
 import AppLayout from "components/layout/app";
-import { FREE_PLAN_PROJECT_LIMIT } from "@/lib/constants";
+import { FREE_PLAN_PROJECT_LIMIT } from "@/lib/constants/countries";
 import useUsage from "@/lib/swr/use-usage";
 import { ProjectProps } from "@/lib/types";
 import { fetcher } from "@/lib/utils";

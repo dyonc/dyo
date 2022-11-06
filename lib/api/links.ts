@@ -1,5 +1,5 @@
 import cloudinary from "cloudinary";
-import { DEFAULT_REDIRECTS, RESERVED_KEYS } from "@/lib/constants";
+import { DEFAULT_REDIRECTS, RESERVED_KEYS } from "@/lib/constants/countries";
 import prisma from "@/lib/prisma";
 import { LinkProps } from "@/lib/types";
 import { redis } from "@/lib/upstash";
@@ -304,7 +304,11 @@ export async function deleteLink(domain: string, key: string) {
   ]);
 }
 
-export async function archiveLink(domain: string, key: string, archived = true) {
+export async function archiveLink(
+  domain: string,
+  key: string,
+  archived = true,
+) {
   return await prisma.link.update({
     where: {
       domain_key: {
