@@ -7,6 +7,15 @@
 </p>
 
 <p align="center">
+  <a href="https://twitter.com/DyonicLTD">
+    <img src="https://img.shields.io/twitter/follow/DyonicLTD?style=flat&label=%40DyonicLTD&logo=twitter&color=2057C2&logoColor=fff" alt="Twitter" />
+  </a>
+  <a href="https://github.com/dyonc/dyo/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/dyonc/dyo?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
+  </a>
+</p>
+
+<p align="center">
   <a href="#introduction"><strong>Introduction</strong></a> ·
   <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
   <a href="#tech-stack"><strong>Tech Stack</strong></a> ·

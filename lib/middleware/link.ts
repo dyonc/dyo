@@ -33,8 +33,8 @@ export default async function LinkMiddleware(
 
     const isBot = detectBot(req);
     if (isBot && proxy) {
-      // rewrite to proxy page (dyo.at/_proxy/[domain]/[key]) if it's a bot
-      return NextResponse.rewrite(`https://dyo.at/_proxy/${domain}/${key}`);
+      // rewrite to proxy page (/_proxy/[domain]/[key]) if it's a bot
+      return NextResponse.rewrite(new URL(`/_proxy/${domain}/${key}`, req.url));
     } else {
       return NextResponse.redirect(target);
     }
