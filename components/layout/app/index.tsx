@@ -9,8 +9,6 @@ import Meta from "../meta";
 import ProjectSelect from "./project-select";
 import UserDropdown from "./user-dropdown";
 
-const CRISP_SCRIPT = `window.$crisp=[];window.CRISP_WEBSITE_ID="2c09b1ee-14c2-46d1-bf72-1dbb998a19e0";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`;
-
 const NavTabs = dynamic(() => import("./nav-tabs"), {
   ssr: false,
   loading: () => <div className="-mb-0.5 h-12 w-full" />,
@@ -32,13 +30,6 @@ export default function AppLayout({
   return (
     <div>
       <Meta />
-      {/* <Script
-        id="script-crisp"
-        dangerouslySetInnerHTML={{
-          __html: CRISP_SCRIPT,
-        }}
-        strategy="lazyOnload"
-      /> */}
       <Toaster />
       <div
         className={`min-h-screen w-full ${bgWhite ? "bg-white" : "bg-gray-50"}`}

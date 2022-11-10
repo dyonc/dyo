@@ -1371,7 +1371,7 @@
 "@types/d3-geo@^1.11.1":
   version "1.12.3"
   resolved "https://registry.npmjs.org/@types/d3-geo/-/d3-geo-1.12.3.tgz"
-  integrity sha512-yZbPb7/5DyL/pXkeOmZ7L5ySpuGr4H48t1cuALjnJy5sXQqmSSAYBiwa6Ya/XpWKX2rJqGDDubmh3nOaopOpeA==
+  integrity sha512-yZbPb7/5DyL/pXkeOmZ7L5ySpuGr4H48t1cuALjnJy5sXQqmSSAYBiwa6Ya/XpWKX2rJqGDDyomh3nOaopOpeA==
   dependencies:
     "@types/geojson" "*"
 

@@ -148,7 +148,7 @@ export default function LinkCard({ props }: { props: LinkProps }) {
               </Link>
               {title && description && image && (
                 <a
-                href={`https://${domain || "dyo.at"}/_proxy/${
+                  href={`https://${domain || "dyo.at"}/_proxy/${
                     domain || "dyo.at"
                   }/${encodeURI(key)}`}
                   target="_blank"
