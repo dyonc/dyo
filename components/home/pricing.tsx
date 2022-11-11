@@ -161,14 +161,17 @@ const Pricing = () => {
                       $
                       {plan === "Pro"
                         ? period === "yearly"
-                          ? nFormatter(PRO_TIERS[tier].price.yearly.amount, 1)
+                          ? nFormatter(
+                              PRO_TIERS[tier].price.yearly.amount / 12,
+                              1,
+                            )
                           : PRO_TIERS[tier].price.monthly.amount
                         : 0}
                     </p>
                   </div>
                 )}
                 <p className="text-gray-500">
-                  per {period === "yearly" ? "year" : "month"}
+                  per {period === "yearly" ? "month, billed annually" : "month"}
                 </p>
               </div>
               <div className="flex h-20 items-center justify-center border-t border-b border-gray-200 bg-gray-50">
@@ -238,16 +241,15 @@ const Pricing = () => {
               </ul>
               <div className="border-t border-gray-200" />
               <div className="p-5">
-                <Link href={ctaLink}>
-                  <a
-                    className={`${
-                      plan === "Pro"
-                        ? "border border-transparent bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:border-blue-700 hover:bg-white hover:bg-clip-text hover:text-transparent"
-                        : "border border-gray-200 bg-black text-white hover:border-black hover:bg-white hover:text-black"
-                    } block w-full rounded-full py-2 font-medium transition-all`}
-                  >
-                    {cta}
-                  </a>
+                <Link
+                  href={ctaLink}
+                  className={`${
+                    plan === "Pro"
+                      ? "border border-transparent bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:border-blue-700 hover:bg-white hover:bg-clip-text hover:text-transparent"
+                      : "border border-gray-200 bg-black text-white hover:border-black hover:bg-white hover:text-black"
+                  } block w-full rounded-full py-2 font-medium transition-all`}
+                >
+                  {cta}
                 </Link>
               </div>
             </div>

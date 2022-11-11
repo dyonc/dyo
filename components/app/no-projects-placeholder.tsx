@@ -24,10 +24,11 @@ export default function NoProjectsPlaceholder({
       >
         Create a project
       </button>
-      <Link href="/links">
-        <a className="mt-3 text-sm font-medium text-gray-500 transition-all hover:text-gray-800 active:scale-95">
-          Add a Dyo link instead
-        </a>
+      <Link
+        href="/links"
+        className="mt-3 text-sm font-medium text-gray-500 transition-all hover:text-gray-800 active:scale-95"
+      >
+        Add a Dyo link instead
       </Link>
     </div>
   );
