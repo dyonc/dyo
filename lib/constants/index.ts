@@ -20,8 +20,39 @@ export const HOME_HOSTNAMES = new Set([
   "localhost:3000",
 ]);
 
-export { default as RESERVED_KEYS } from "./reserved-keys";
-export { default as DEFAULT_REDIRECTS } from "./default-redirects";
+export const RESERVED_KEYS = new Set([
+  "api",
+  "va",
+  "static",
+  "stats",
+  "proxy",
+  "auth",
+  "pricing",
+  "about",
+  "placeholder",
+  "blog",
+  "careers",
+  "features",
+  "contact",
+  "terms",
+  "privacy",
+  "admin",
+  "help",
+  "new",
+  "info",
+  "demo",
+]);
+export const DEFAULT_REDIRECTS = {
+  home: "https://dyo.at",
+  signin: "https://app.dyo.at/login",
+  login: "https://app.dyo.at/login",
+  register: "https://app.dyo.at/register",
+  signup: "https://app.dyo.at/register",
+  app: "https://app.dyo.at",
+  dashboard: "https://app.dyo.at",
+  links: "https://app.dyo.at/links",
+  settings: "https://app.dyo.at/settings",
+};
 
 export const FREE_PLAN_PROJECT_LIMIT = 5;
 export const FAVICON_FOLDER = "/_static/favicons";
