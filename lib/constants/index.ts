@@ -52,6 +52,7 @@ export const DEFAULT_REDIRECTS = {
   dashboard: "https://app.dyo.at",
   links: "https://app.dyo.at/links",
   settings: "https://app.dyo.at/settings",
+  welcome: "https://app.dyo.at/welcome",
 };
 
 export const FREE_PLAN_PROJECT_LIMIT = 5;
