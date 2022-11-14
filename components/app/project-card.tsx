@@ -13,11 +13,12 @@ import { fetcher, nFormatter } from "@/lib/utils";
 export default function ProjectCard({
   name,
   slug,
+  logo,
   domain,
   domainVerified,
 }: ProjectProps) {
-  const { data: count, isValidating } = useSWR<number>(
-    domainVerified && `/api/projects/${slug}/domains/${domain}/links/count`,
+  const { data: count } = useSWR<number>(
+    `/api/projects/${slug}/domains/${domain}/links/count`,
     fetcher,
   );
   return (
@@ -25,9 +26,12 @@ export default function ProjectCard({
       <div className="flex justify-between rounded-lg bg-white p-6 shadow transition-all hover:shadow-md">
         <div className="flex items-center space-x-3">
           <BlurImage
-            src={`https://avatar.tobi.sh/${slug}`}
+            src={
+              logo ||
+              `https://www.google.com/s2/favicons?sz=64&domain_url=${domain}`
+            }
             alt={name}
-            className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-full border border-gray-300"
+            className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-full"
             width={48}
             height={48}
           />
@@ -62,7 +66,7 @@ export default function ProjectCard({
         </div>
         <div className="flex items-center space-x-2">
           <LinkIcon className="h-5 w-5 text-gray-600" />
-          {count ? (
+          {count || count === 0 ? (
             <h2 className="text-lg font-medium text-gray-700">
               {nFormatter(count)}
             </h2>

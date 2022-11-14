@@ -1,14 +1,19 @@
 import Head from "next/head";
 import { FAVICON_FOLDER } from "@/lib/constants";
 
-export default function Meta() {
+export default function Meta({
+  title = "Dyo - Open-Source Bitly Alternative",
+  description = "An open-source link shortener SaaS with built-in analytics and free custom domains.",
+  image = "https://dyo.at/_static/thumbnail.png",
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+}) {
   return (
     <Head>
-      <title>Dyo - Open-Source Bitly Alternative</title>
-      <meta
-        name="description"
-        content="An open-source link shortener SaaS with built-in analytics and free custom domains."
-      />
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -37,12 +42,9 @@ export default function Meta() {
 
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta itemProp="image" content="https://dyo.at/_static/thumbnail.png" />
+      <meta itemProp="image" content={image} />
       <meta property="og:logo" content="https://dyo.at/_static/logo.png"></meta>
-      <meta
-        property="og:image"
-        content="https://dyo.at/_static/thumbnail.png"
-      />
+      <meta property="og:image" content={image} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@DyonicLTD" />
@@ -51,14 +53,8 @@ export default function Meta() {
         name="twitter:title"
         content="Dyo - Open-Source Bitly Alternative"
       />
-      <meta
-        name="twitter:description"
-        content="An open-source link shortener SaaS with built-in analytics and free custom domains."
-      />
-      <meta
-        name="twitter:image"
-        content="https://dyo.at/_static/thumbnail.png"
-      />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
     </Head>
   );
 }
