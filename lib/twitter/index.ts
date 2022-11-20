@@ -5,5 +5,5 @@ export default function getTweetsMetadata(ids: string[]) {
 }
 
 export const homepageTweets = [
-  "1590659407586918400",
+  "1594089062545391617",
 ];
