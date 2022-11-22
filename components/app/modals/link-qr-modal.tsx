@@ -8,13 +8,7 @@ import {
 } from "react";
 import { HexColorInput, HexColorPicker } from "react-colorful";
 import BlurImage from "@/components/shared/blur-image";
-import {
-  ChevronRight,
-  Clipboard,
-  Copy,
-  LoadingDots,
-  Logo,
-} from "@/components/shared/icons";
+import { ChevronRight, Clipboard, Logo } from "@/components/shared/icons";
 import Modal from "@/components/shared/modal";
 import Switch from "@/components/shared/switch";
 import Tooltip, { TooltipContent } from "@/components/shared/tooltip";
@@ -52,17 +46,12 @@ function LinkQRModalHelper({
     }
   }, [props]);
 
-  const qrDestUrl = useMemo(
-    () => linkConstructor({ key: props.key, domain }),
-    [props, domain],
-  );
-
   const qrLogoUrl = useMemo(() => {
     if (logo) return logo;
     return typeof window !== "undefined" && window.location.origin
       ? new URL("/_static/logo.svg", window.location.origin).href
       : "";
-  }, []);
+  }, [logo]);
 
   function download(url: string, extension: string) {
     if (!anchorRef.current) return;
@@ -72,21 +61,25 @@ function LinkQRModalHelper({
   }
 
   const [showLogo, setShowLogo] = useState(true);
-  const [qrData, setQrData] = useState({
-    value: qrDestUrl,
-    bgColor: "#ffffff",
-    fgColor: "#000000",
-    size: 1024,
-    level: "Q", // QR Code error correction level: https://blog.qrstuff.com/general/qr-code-error-correction
-    ...(showLogo && {
-      imageSettings: {
-        src: qrLogoUrl,
-        height: 256,
-        width: 256,
-        excavate: true,
-      },
+  const [fgColor, setFgColor] = useState("#000000");
+  const qrData = useMemo(
+    () => ({
+      value: linkConstructor({ key: props.key, domain }),
+      bgColor: "#ffffff",
+      fgColor,
+      size: 1024,
+      level: "Q", // QR Code error correction level: https://blog.qrstuff.com/general/qr-code-error-correction
+      ...(showLogo && {
+        imageSettings: {
+          src: qrLogoUrl,
+          height: 256,
+          width: 256,
+          excavate: true,
+        },
+      }),
     }),
-  });
+    [props.key, domain, fgColor, showLogo, qrLogoUrl],
+  );
 
   const copyToClipboard = async () => {
     try {
@@ -139,7 +132,7 @@ function LinkQRModalHelper({
 
           <AdvancedSettings
             qrData={qrData}
-            setQrData={setQrData}
+            setFgColor={setFgColor}
             setShowLogo={setShowLogo}
           />
 
@@ -176,7 +169,7 @@ function LinkQRModalHelper({
   );
 }
 
-function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
+function AdvancedSettings({ qrData, setFgColor, setShowLogo }) {
   const { data: session } = useSession();
   const { plan } = session ? useUsage() : { plan: "free" };
   const [expanded, setExpanded] = useState(false);
@@ -215,7 +208,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
               <Tooltip
                 content={
                   <TooltipContent
-                    title="As a freemium product, we rely on word of mouth to spread the word about Dyo. If you'd like to remove the Dyo Logo/upload your own, please consider upgrading to a Pro plan."
+                    title="As a freemium product, we rely on word of mouth to spread the word about Dyo. If you'd like to remove the Dyo logo/upload your own, please consider upgrading to a Pro plan."
                     cta="Upgrade to Pro"
                     ctaLink={isApp ? "/settings" : "/#pricing"}
                   />
@@ -257,12 +250,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                   <div className="flex max-w-xs flex-col items-center space-y-3 p-5 text-center">
                     <HexColorPicker
                       color={qrData.fgColor}
-                      onChange={(color) =>
-                        setQrData({
-                          ...qrData,
-                          fgColor: color,
-                        })
-                      }
+                      onChange={(color) => setFgColor(color)}
                     />
                   </div>
                 }
@@ -279,12 +267,7 @@ function AdvancedSettings({ qrData, setQrData, setShowLogo }) {
                 id="color"
                 name="color"
                 color={qrData.fgColor}
-                onChange={(color) =>
-                  setQrData({
-                    ...qrData,
-                    fgColor: color,
-                  })
-                }
+                onChange={(color) => setFgColor(color)}
                 prefixed
                 style={{ borderColor: qrData.fgColor }}
                 className={`block w-full rounded-r-md border-2 border-l-0 pl-3 text-gray-900 placeholder-gray-300 focus:outline-none focus:ring-black sm:text-sm`}
