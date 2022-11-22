@@ -125,19 +125,20 @@ export async function checkIfKeyExists(domain: string, key: string) {
   return !!link;
 }
 
-const {
-  domain,
-  key,
-  url,
-  expiresAt,
-  password,
-  title,
-  description,
-  image,
-  proxy,
-  ios,
-  android,
-} = link;
+export async function addLink(link: LinkProps) {
+  const {
+    domain,
+    key,
+    url,
+    expiresAt,
+    password,
+    title,
+    description,
+    image,
+    proxy,
+    ios,
+    android,
+  } = link;
   const hasPassword = password && password.length > 0 ? true : false;
   const exat = expiresAt ? new Date(expiresAt).getTime() / 1000 : null;
   const uploadedImage = image && image.startsWith("data:image") ? true : false;
@@ -274,7 +275,7 @@ export async function editLink(
     ...(changedKey
       ? [
           cloudinary.v2.uploader
-          .destroy(`${domain}/${oldKey}`, {
+            .destroy(`${domain}/${oldKey}`, {
               invalidate: true,
             })
             .catch(() => {}),
