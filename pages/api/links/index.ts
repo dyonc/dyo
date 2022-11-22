@@ -4,6 +4,14 @@ import { Session, withUserAuth } from "@/lib/auth";
 import { getBlackListedDomains, getDomainWithoutWWW } from "@/lib/utils";
 import { log } from "@/lib/utils";
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "1500kb",
+    },
+  },
+};
+
 // This is a special route for retrieving and creating custom dyo.at links.
 
 export default withUserAuth(

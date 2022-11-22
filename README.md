@@ -3,7 +3,7 @@
 </a>
 
 <p align="center">
-  An open-source link shortener SaaS with built-in analytics + free custom domains.
+  An open-source link management tool for modern marketing teams to create, share, and track short links
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 
 ## Introduction
 
-Dyo is an open-source link shortener with built-in analytics + free custom domains. Built with [Vercel Edge Functions](http://vercel.com/edge), [Upstash Redis](https://docs.upstash.com/redis), and [Planetscale MySQL](https://planetscale.com/).
+Dyo is an open-source link management tool for modern marketing teams to create, share, and track short links. Built with [Vercel Edge Functions](http://vercel.com/edge), [Upstash Redis](https://docs.upstash.com/redis), and [Planetscale MySQL](https://planetscale.com/).
 
 Here are some of the features that Dyo provides out-of-the-box:
 
