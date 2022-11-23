@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github } from "@/components/shared/icons";
+import { Github, Twitter } from "@/components/shared/icons";
 
 const Hero = () => {
   return (
@@ -16,7 +16,7 @@ const Hero = () => {
       </a>
 
       <h1 className="mt-5 font-display text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl sm:leading-[1.15]">
-          Short Links With
+        Short Links With
         <br />
         <span className="bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent">
           Superpowers

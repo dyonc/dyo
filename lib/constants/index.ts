@@ -47,6 +47,7 @@ export const RESERVED_KEYS = new Set([
   "placeholder",
   "blog",
   "careers",
+  "docs",
   "features",
   "contact",
   "terms",
@@ -68,6 +69,8 @@ export const DEFAULT_REDIRECTS = {
   links: "https://app.dyo.at/links",
   settings: "https://app.dyo.at/settings",
   welcome: "https://app.dyo.at/welcome",
+  slack: "https://dyonic.slack.com",
+  discord: "https://dyonic.me/discord", // placeholder for now
 };
 
 export const FREE_PLAN_PROJECT_LIMIT = 5;
@@ -87,4 +90,25 @@ export const SECOND_LEVEL_DOMAINS = new Set([
 
 export const SPECIAL_APEX_DOMAINS = {
   "youtu.be": "youtube.com",
+};
+
+export const DEFAULT_LINK_PROPS = {
+  key: "github",
+  url: "https://github.com/dyonc/dyo",
+  domain: "dyo.at",
+  archived: false,
+  expiresAt: null,
+  password: null,
+
+  title: null,
+  description: null,
+  image: null,
+  ios: null,
+  android: null,
+
+  clicks: 0,
+  userId: "",
+  createdAt: new Date(),
+
+  proxy: false,
 };

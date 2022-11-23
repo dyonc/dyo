@@ -64,9 +64,9 @@ function CompleteSetupModal({
               if (cta === "closeModal") {
                 return (
                   <button
-                  key={display}
-                  onClick={() => setShowCompleteSetupModal(false)}
-                >
+                    key={display}
+                    onClick={() => setShowCompleteSetupModal(false)}
+                  >
                     {contents}
                   </button>
                 );

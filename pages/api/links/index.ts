@@ -13,7 +13,6 @@ export const config = {
 };
 
 // This is a special route for retrieving and creating custom dyo.at links.
-
 export default withUserAuth(
   async (req: NextApiRequest, res: NextApiResponse, session: Session) => {
     // GET /api/links – get all dyo.at links created by the user
