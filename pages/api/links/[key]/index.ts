@@ -51,7 +51,6 @@ export default withUserAuth(
           userId: session.user.id,
         },
         oldKey,
-        "dyo",
       );
       if (response === null) {
         return res.status(400).json({ error: "Key already exists" });
