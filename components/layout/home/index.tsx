@@ -17,7 +17,7 @@ export default function HomeLayout({
   domain?: string;
   meta?: ReactNode;
 }) {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
   const { key } = router.query as { key?: string };
   return (
@@ -51,13 +51,13 @@ export default function HomeLayout({
             </div>
 
             <AnimatePresence>
-              {session ? (
+              {!session && status !== "loading" ? (
                 <motion.a
                   {...FADE_IN_ANIMATION_SETTINGS}
-                  href="https://app.dyo.at"
+                  href="https://app.dyo.at/login"
                   className="rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black"
                 >
-                  Dashboard
+                  Sign in
                 </motion.a>
               ) : (
                 <motion.a
@@ -65,7 +65,7 @@ export default function HomeLayout({
                   href="https://app.dyo.at/login"
                   className="rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black"
                 >
-                  Sign in
+                  Dashboard
                 </motion.a>
               )}
             </AnimatePresence>
