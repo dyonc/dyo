@@ -60,6 +60,11 @@ export function nFormatter(num: number, digits?: number) {
     : "0";
 }
 
+export function capitalize(str: string) {
+  if (!str || typeof str !== "string") return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export function linkConstructor({
   key,
   domain = "dyo.at",
@@ -73,9 +78,9 @@ export function linkConstructor({
   pretty?: boolean;
   noDomain?: boolean;
 }) {
-  const link = `${
-    localhost ? "http://localhost:3000" : `https://${domain}`
-  }/${key}`;
+  const link = `${localhost ? "http://localhost:3000" : `https://${domain}`}${
+    key !== "_root" ? `/${key}` : ""
+  }`;
 
   if (noDomain) return `/${key}`;
   return pretty ? link.replace(/^https?:\/\//, "") : link;
@@ -96,31 +101,6 @@ export const getDateTimeLocal = (timestamp?: Date): string => {
     .slice(0, 2)
     .join(":");
 };
-
-export const generateDomainFromName = (name: string) => {
-  const normalizedName = name.toLowerCase().replaceAll(" ", "-");
-  if (normalizedName.length < 3) {
-    return "";
-  }
-  if (ccTLDs.has(normalizedName.slice(-2))) {
-    return `${normalizedName.slice(0, -2)}.${normalizedName.slice(-2)}`;
-  }
-  // remove vowels
-  const devowel = normalizedName.replace(/[aeiou]/g, "");
-  if (devowel.length >= 3 && ccTLDs.has(devowel.slice(-2))) {
-    return `${devowel.slice(0, -2)}.${devowel.slice(-2)}`;
-  }
-
-  const shortestString = [normalizedName, devowel].reduce((a, b) =>
-    a.length < b.length ? a : b,
-  );
-
-  return `${shortestString}.to`;
-};
-
-export const validDomainRegex = new RegExp(
-  "^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$",
-);
 
 export const getFirstAndLastDay = (day: number) => {
   const today = new Date();
@@ -143,6 +123,34 @@ export const getFirstAndLastDay = (day: number) => {
     };
   }
 };
+
+export const generateDomainFromName = (name: string) => {
+  const normalizedName = name
+    .toLowerCase()
+    .trim()
+    .replace(/[\W_]+/g, "");
+  if (normalizedName.length < 3) {
+    return "";
+  }
+  if (ccTLDs.has(normalizedName.slice(-2))) {
+    return `${normalizedName.slice(0, -2)}.${normalizedName.slice(-2)}`;
+  }
+  // remove vowels
+  const devowel = normalizedName.replace(/[aeiou]/g, "");
+  if (devowel.length >= 3 && ccTLDs.has(devowel.slice(-2))) {
+    return `${devowel.slice(0, -2)}.${devowel.slice(-2)}`;
+  }
+
+  const shortestString = [normalizedName, devowel].reduce((a, b) =>
+    a.length < b.length ? a : b,
+  );
+
+  return `${shortestString}.to`;
+};
+
+export const validDomainRegex = new RegExp(
+  "^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$",
+);
 
 export const getSubdomain = (name: string, apexName: string) => {
   if (name === apexName) return null;
@@ -173,6 +181,53 @@ export const getApexDomain = (url: string) => {
   }
   // if it's a normal domain (e.g. dyo.at), we return the domain
   return domain;
+};
+
+export const isValidUrl = (url: string) => {
+  try {
+    new URL(url);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+export const getUrlFromString = (str: string) => {
+  if (isValidUrl(str)) return str;
+  try {
+    if (str.includes(".") && !str.includes(" ")) {
+      return new URL(`https://${str}`).toString();
+    }
+  } catch (e) {
+    return null;
+  }
+};
+
+export const getDomainWithoutWWW = (url: string) => {
+  if (isValidUrl(url)) {
+    return new URL(url).hostname.replace(/^www\./, "");
+  }
+  try {
+    if (url.includes(".") && !url.includes(" ")) {
+      return new URL(`https://${url}`).hostname.replace(/^www\./, "");
+    }
+  } catch (e) {
+    return null;
+  }
+};
+
+export const getQueryString = (router: NextRouter) => {
+  const { slug: omit, ...queryWithoutSlug } = router.query as {
+    slug: string;
+    [key: string]: string;
+  };
+  const queryString = new URLSearchParams(queryWithoutSlug).toString();
+  return `${queryString ? "?" : ""}${queryString}`;
+};
+
+export const truncate = (str: string, length: number) => {
+  if (!str || str.length <= length) return str;
+  return `${str.slice(0, length)}...`;
 };
 
 export const getParamsFromURL = (url: string) => {
@@ -227,53 +282,6 @@ export const getUrlWithoutUTMParams = (url: string) => {
   } catch (e) {
     return url;
   }
-};
-
-export const isValidUrl = (url: string) => {
-  try {
-    new URL(url);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
-
-export const getUrlFromString = (str: string) => {
-  if (isValidUrl(str)) return str;
-  try {
-    if (str.includes(".") && !str.includes(" ")) {
-      return new URL(`https://${str}`).toString();
-    }
-  } catch (e) {
-    return null;
-  }
-};
-
-export const getDomainWithoutWWW = (url: string) => {
-  if (isValidUrl(url)) {
-    return new URL(url).hostname.replace(/^www\./, "");
-  }
-  try {
-    if (url.includes(".") && !url.includes(" ")) {
-      return new URL(`https://${url}`).hostname.replace(/^www\./, "");
-    }
-  } catch (e) {
-    return null;
-  }
-};
-
-export const getQueryString = (router: NextRouter) => {
-  const { slug: omit, ...queryWithoutSlug } = router.query as {
-    slug: string;
-    [key: string]: string;
-  };
-  const queryString = new URLSearchParams(queryWithoutSlug).toString();
-  return `${queryString ? "?" : ""}${queryString}`;
-};
-
-export const truncate = (str: string, length: number) => {
-  if (!str || str.length <= length) return str;
-  return `${str.slice(0, length)}...`;
 };
 
 const logTypeToEnv = {

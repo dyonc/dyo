@@ -10,11 +10,9 @@ import { FADE_IN_ANIMATION_SETTINGS } from "@/lib/constants";
 
 export default function HomeLayout({
   children,
-  domain,
   meta = <Meta />,
 }: {
   children: ReactNode;
-  domain?: string;
   meta?: ReactNode;
 }) {
   const { data: session, status } = useSession();
@@ -27,27 +25,15 @@ export default function HomeLayout({
         <div className="mx-auto max-w-screen-xl px-5 md:px-20">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
-              {domain ? (
-                <a href="https://dyo.at" target="_blank" rel="noreferrer">
-                  <Image
-                    src="/_static/logotype.svg"
-                    alt="Dyo logo"
-                    width={834}
-                    height={236}
-                    className="w-24"
-                  />
-                </a>
-              ) : (
-                <Link href="/">
-                  <Image
-                    src="/_static/logotype.svg"
-                    alt="Dyo logo"
-                    width={834}
-                    height={236}
-                    className="w-24"
-                  />
-                </Link>
-              )}
+              <Link href="/">
+                <Image
+                  src="/_static/logotype.svg"
+                  alt="Dyo Logo"
+                  width={834}
+                  height={236}
+                  className="w-24"
+                />
+              </Link>
             </div>
 
             <AnimatePresence>
@@ -62,7 +48,7 @@ export default function HomeLayout({
               ) : (
                 <motion.a
                   {...FADE_IN_ANIMATION_SETTINGS}
-                  href="https://app.dyo.at/login"
+                  href="https://app.dyo.at"
                   className="rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black"
                 >
                   Dashboard
@@ -78,17 +64,10 @@ export default function HomeLayout({
           <span className="sr-only">Twitter</span>
           <Twitter className="h-6 w-6 text-gray-600" />
         </a>
-        {domain ? (
-          <a href="https://dyo.at" target="_blank" rel="noreferrer">
-            <span className="sr-only">Dyo Logo</span>
-            <Logo className="h-7 w-7 text-gray-600" />
-          </a>
-        ) : (
-          <Link href="/">
-            <span className="sr-only">Dyo Logo</span>
-            <Logo className="h-7 w-7 text-gray-600" />
-          </Link>
-        )}
+        <Link href="/">
+          <span className="sr-only">Dyo Logo</span>
+          <Logo className="h-7 w-7 text-gray-600" />
+        </Link>
         <a
           href="https://github.com/dyonc/dyo"
           target="_blank"

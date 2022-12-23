@@ -15,6 +15,7 @@ import {
   AlertCircleFill,
   LoadingCircle,
   LoadingDots,
+  Lock,
   Random,
   X,
 } from "@/components/shared/icons";
@@ -97,27 +98,6 @@ function AddEditLinkModal({
     setData((prev) => ({ ...prev, key }));
     setGeneratingSlug(false);
   }, []);
-
-  // const onPaste = useCallback(
-  //   (e: React.ClipboardEvent<HTMLInputElement>) => {
-  //     if (props) return;
-  //     const url = e.clipboardData.getData("text");
-  //     setShowAddEditLinkModal(true);
-  //     try {
-  //       new URL(url);
-  //       console.log(url);
-  //       setData((prev) => ({ ...prev, url }));
-  //     } catch (e) {
-  //       console.log("not a valid url");
-  //     }
-  //   },
-  //   [props, showAddEditLinkModal, setData],
-  // );
-
-  // useEffect(() => {
-  //   window.addEventListener("paste", onPaste as any);
-  //   return () => window.removeEventListener("paste", onPaste as any);
-  // }, [onPaste]);
 
   const [generatingMetatags, setGeneratingMetatags] = useState(
     props ? true : false,
@@ -230,17 +210,24 @@ function AddEditLinkModal({
 
   const randomIdx = Math.floor(Math.random() * 100);
 
+  const [lockKey, setLockKey] = useState(false);
+  useEffect(() => {
+    if (props?.key) {
+      setLockKey(true);
+    }
+  }, [props?.key]);
+
   return (
     <Modal
       showModal={showAddEditLinkModal}
       setShowModal={setShowAddEditLinkModal}
       closeWithX={homepageDemo ? false : true}
     >
-      <div className="grid max-h-[min(906px,_90vh)] w-full divide-x divide-gray-100 overflow-scroll bg-white shadow-xl transition-all scrollbar-hide sm:max-w-screen-lg sm:grid-cols-2 sm:rounded-2xl sm:border sm:border-gray-200">
+      <div className="relative grid max-h-[min(906px,_90vh)] w-full divide-x divide-gray-100 overflow-scroll bg-white shadow-xl transition-all scrollbar-hide sm:max-w-screen-lg sm:grid-cols-2 sm:rounded-2xl sm:border sm:border-gray-200">
         {!hideXButton && !homepageDemo && (
           <button
             onClick={() => setShowAddEditLinkModal(false)}
-            className="group absolute top-0 right-0 m-3 hidden rounded-full p-2 text-gray-500 transition-all duration-75 hover:bg-gray-100 focus:outline-none active:bg-gray-200 sm:block"
+            className="group absolute top-0 right-0 z-20 m-3 hidden rounded-full p-2 text-gray-500 transition-all duration-75 hover:bg-gray-100 focus:outline-none active:bg-gray-200 sm:block"
           >
             <X className="h-5 w-5" />
           </button>
@@ -359,45 +346,65 @@ function AddEditLinkModal({
                   >
                     Short Link
                   </label>
-                  <button
-                    className="flex items-center space-x-2 text-sm text-gray-500 transition-all duration-75 hover:text-black active:scale-95"
-                    onClick={generateRandomSlug}
-                    disabled={generatingSlug}
-                    type="button"
-                  >
-                    {generatingSlug ? (
-                      <LoadingCircle />
-                    ) : (
-                      <Random className="h-3 w-3" />
-                    )}
-                    <p>{generatingSlug ? "Generating" : "Randomize"}</p>
-                  </button>
+                  {lockKey ? (
+                    <button
+                      className="flex items-center space-x-2 text-sm text-gray-500 transition-all duration-75 hover:text-black active:scale-95"
+                      type="button"
+                      onClick={() => {
+                        window.confirm(
+                          "Editing an existing short link will result in broken links and reset its analytics. Are you sure you want to continue?",
+                        ) && setLockKey(false);
+                      }}
+                    >
+                      <Lock className="h-3 w-3" />
+                      <p>Unlock</p>
+                    </button>
+                  ) : (
+                    <button
+                      className="flex items-center space-x-2 text-sm text-gray-500 transition-all duration-75 hover:text-black active:scale-95"
+                      onClick={generateRandomSlug}
+                      disabled={generatingSlug}
+                      type="button"
+                    >
+                      {generatingSlug ? (
+                        <LoadingCircle />
+                      ) : (
+                        <Random className="h-3 w-3" />
+                      )}
+                      <p>{generatingSlug ? "Generating" : "Randomize"}</p>
+                    </button>
+                  )}
                 </div>
                 <div className="relative mt-1 flex rounded-md shadow-sm">
                   <span className="inline-flex items-center whitespace-nowrap rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-5 text-sm text-gray-500">
                     {domain || "dyo.at"}
                   </span>
-                  <input
-                    type="text"
-                    name="key"
-                    id={`key-${randomIdx}`}
-                    required
-                    autoFocus={false}
-                    pattern="[\p{Letter}\p{Mark}\d-]+" // Unicode regex to match characters from all languages and numbers (and omit all symbols except for dashes)
-                    className={`${
-                      keyExistsError
-                        ? "border-red-300 text-red-900 placeholder-red-300 focus:border-red-500 focus:ring-red-500"
-                        : "border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500"
-                    } block w-full rounded-r-md pr-10 text-sm focus:outline-none`}
-                    placeholder="github"
-                    value={key}
-                    onChange={(e) => {
-                      setKeyExistsError(false);
-                      setData({ ...data, key: e.target.value });
-                    }}
-                    aria-invalid="true"
-                    aria-describedby="key-error"
-                  />
+                  {lockKey ? (
+                    <div className="block w-full cursor-not-allowed select-none rounded-r-md border border-gray-300 bg-gray-100 px-3 py-2 text-sm text-gray-500">
+                      {props.key}
+                    </div>
+                  ) : (
+                    <input
+                      type="text"
+                      name="key"
+                      id={`key-${randomIdx}`}
+                      required
+                      pattern="[\p{Letter}\p{Mark}\d-]+" // Unicode regex to match characters from all languages and numbers (and omit all symbols except for dashes)
+                      className={`${
+                        keyExistsError
+                          ? "border-red-300 text-red-900 placeholder-red-300 focus:border-red-500 focus:ring-red-500"
+                          : "border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:ring-gray-500"
+                      } block w-full rounded-r-md pr-10 text-sm focus:outline-none`}
+                      placeholder="github"
+                      value={key}
+                      onChange={(e) => {
+                        setKeyExistsError(false);
+                        setData({ ...data, key: e.target.value });
+                      }}
+                      aria-invalid="true"
+                      aria-describedby="key-error"
+                    />
+                  )}
                   {keyExistsError && (
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                       <AlertCircleFill

@@ -6,7 +6,28 @@ export const LOCALHOST_GEO_DATA = {
   longitude: "-122.385",
 };
 
-export const INTERVALS = ["1h", "24h", "7d", "30d"];
+export const INTERVALS = [
+  {
+    display: "Last hour",
+    slug: "1h",
+  },
+  {
+    display: "Last 24 hours",
+    slug: "24h",
+  },
+  {
+    display: "Last 7 days",
+    slug: "7d",
+  },
+  {
+    display: "Last 30 days",
+    slug: "30d",
+  },
+  {
+    display: "Last 3 months",
+    slug: "90d",
+  },
+];
 
 export const FRAMER_MOTION_LIST_ITEM_VARIANTS = {
   hidden: { scale: 0.8, opacity: 0 },
@@ -37,6 +58,9 @@ export const HOME_HOSTNAMES = new Set([
 export const RESERVED_KEYS = new Set([
   "api",
   "va",
+  "dyonic",
+  "ceo",
+  "meta",
   "static",
   "stats",
   "proxy",
@@ -69,8 +93,8 @@ export const DEFAULT_REDIRECTS = {
   links: "https://app.dyo.at/links",
   settings: "https://app.dyo.at/settings",
   welcome: "https://app.dyo.at/welcome",
-  slack: "https://dyonic.slack.com",
-  discord: "https://dyonic.me/discord", // placeholder for now
+  slack: "https://dyo.slack.com",
+  discord: "https://twitter.com/DyonicLTD", // placeholder for now
 };
 
 export const FREE_PLAN_PROJECT_LIMIT = 5;

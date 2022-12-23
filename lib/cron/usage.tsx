@@ -1,9 +1,8 @@
 import sendMail from "emails";
 import UsageExceeded from "emails/UsageExceeded";
 import prisma from "@/lib/prisma";
-import { redis } from "@/lib/upstash";
-import { getFirstAndLastDay } from "@/lib/utils";
-import { log } from "@/lib/utils";
+import { getClicksUsage } from "@/lib/tinybird";
+import { getFirstAndLastDay, log } from "@/lib/utils";
 
 export const updateUsage = async () => {
   const users = await prisma.user.findMany({
@@ -65,7 +64,7 @@ export const updateUsage = async () => {
           projects.map(async ({ project: { id, domain } }) => {
             return {
               id,
-              usage: await getUsage(domain, billingCycleStart),
+              usage: await getUsageForProject(domain, billingCycleStart),
             };
           }),
         );
@@ -150,38 +149,17 @@ export const updateUsage = async () => {
 /**
  * Get the usage for a project
  **/
-const getUsage = async (
+const getUsageForProject = async (
   domain: string,
   billingCycleStart: number,
 ): Promise<number> => {
   const { firstDay, lastDay } = getFirstAndLastDay(billingCycleStart);
 
-  const links = await prisma.link.findMany({
-    where: {
-      domain,
-      // only for dyo.at, pull data for owner's usage only
-      ...(domain === "dyo.at" && {
-        userId: process.env.DYO_OWNER_ID,
-      }),
-    },
-    select: {
-      key: true,
-    },
+  const usage = await getClicksUsage({
+    domain,
+    start: firstDay.toISOString().replace("T", " ").replace("Z", ""),
+    end: lastDay.toISOString().replace("T", " ").replace("Z", ""),
   });
-  let results: number[] = [];
-
-  if (links.length > 0) {
-    const pipeline = redis.pipeline();
-    links.forEach(({ key }) => {
-      pipeline.zcount(
-        `${domain}:clicks:${key}`,
-        firstDay.getTime(),
-        lastDay.getTime(),
-      );
-    });
-    results = await pipeline.exec();
-  }
-  const usage = results.reduce((acc, curr) => acc + curr, 0);
   return usage;
 };
 

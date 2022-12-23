@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Twitter } from "@/components/shared/icons";
+import { Github } from "@/components/shared/icons";
 
 const Hero = () => {
   return (
