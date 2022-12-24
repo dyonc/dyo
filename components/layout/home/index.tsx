@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { Github, Logo, Twitter } from "@/components/shared/icons";
 import Meta from "../meta";
@@ -9,26 +9,36 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FADE_IN_ANIMATION_SETTINGS } from "@/lib/constants";
 
 export default function HomeLayout({
+  meta,
   children,
-  meta = <Meta />,
 }: {
+  meta?: {
+    title?: string;
+    description?: string;
+    image?: string;
+  };
   children: ReactNode;
-  meta?: ReactNode;
 }) {
   const { data: session, status } = useSession();
   const router = useRouter();
   const { key } = router.query as { key?: string };
+
+  const [hostname, setHostname] = useState("dyo.at");
+  useEffect(() => {
+    setHostname(window.location.origin);
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col justify-between">
-      {meta}
+      <Meta {...meta} />
       <div className={`${key ? "bg-gray-50" : ""} z-20`}>
         <div className="mx-auto max-w-screen-xl px-5 md:px-20">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
-              <Link href="/">
+              <Link href={hostname === "dyo.at" ? "/" : `https://dyo.at/`}>
                 <Image
                   src="/_static/logotype.svg"
-                  alt="Dyo Logo"
+                  alt="Dyo logo"
                   width={834}
                   height={236}
                   className="w-24"
@@ -64,7 +74,7 @@ export default function HomeLayout({
           <span className="sr-only">Twitter</span>
           <Twitter className="h-6 w-6 text-gray-600" />
         </a>
-        <Link href="/">
+        <Link href={hostname === "https://dyo.at" ? "/" : `https://dyo.at/`}>
           <span className="sr-only">Dyo Logo</span>
           <Logo className="h-7 w-7 text-gray-600" />
         </Link>
