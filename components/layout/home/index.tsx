@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { useSession } from "next-auth/react";
 import { Github, Logo, Twitter } from "@/components/shared/icons";
 import Meta from "../meta";
@@ -23,11 +23,6 @@ export default function HomeLayout({
   const router = useRouter();
   const { key } = router.query as { key?: string };
 
-  const [hostname, setHostname] = useState("dyo.at");
-  useEffect(() => {
-    setHostname(window.location.origin);
-  }, []);
-
   return (
     <div className="flex min-h-screen flex-col justify-between">
       <Meta {...meta} />
@@ -35,7 +30,7 @@ export default function HomeLayout({
         <div className="mx-auto max-w-screen-xl px-5 md:px-20">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
-              <Link href={hostname === "dyo.at" ? "/" : `https://dyo.at/`}>
+              <Link href="/">
                 <Image
                   src="/_static/logotype.svg"
                   alt="Dyo logo"
@@ -74,7 +69,7 @@ export default function HomeLayout({
           <span className="sr-only">Twitter</span>
           <Twitter className="h-6 w-6 text-gray-600" />
         </a>
-        <Link href={hostname === "https://dyo.at" ? "/" : `https://dyo.at/`}>
+        <Link href="/">
           <span className="sr-only">Dyo Logo</span>
           <Logo className="h-7 w-7 text-gray-600" />
         </Link>
