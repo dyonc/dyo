@@ -67,7 +67,7 @@ export default function Placeholder({ domain }: { domain: string }) {
               <InlineSnippet>{domain}</InlineSnippet> is a custom domain on{" "}
               <a
                 className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text font-semibold text-transparent decoration-rose-600 hover:underline"
-                href="https://dyo.at"
+                href={`https://dyo.at?utm_source=${domain}&utm_medium=referral&utm_campaign=custom-domain`}
               >
                 Dyo
               </a>{" "}
